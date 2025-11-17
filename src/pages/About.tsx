@@ -6,46 +6,32 @@ import teamPlaceholder from "@/assets/team-placeholder.jpg";
 
 const team = [
   {
-    name: "John Doe",
-    position: "CEO & Co-Founder",
+    name: "Peter Davis Krahenbuhl",
+    position: "CEO",
     image: teamPlaceholder,
-    linkedin: "https://linkedin.com/in/johndoe",
-    bio: "Agricultural technology pioneer with 15+ years in IoT solutions for smallholder farmers. Led digital transformation projects across East Africa.",
+    linkedin: "",
+    bio: "Global Sustainability expert",
   },
   {
-    name: "Jane Smith",
-    position: "CTO & Co-Founder",
+    name: "Abisai Nandi",
+    position: "Founder & CIO",
     image: teamPlaceholder,
-    linkedin: "https://linkedin.com/in/janesmith",
-    bio: "IoT systems architect specializing in edge computing and solar-powered devices. Former lead engineer at major agritech company.",
+    linkedin: "",
+    bio: "10+ years in the agribusiness industry, with over 10,000+ farmer relationships",
   },
   {
-    name: "Michael Johnson",
-    position: "Head of Product",
+    name: "Chris Moore",
+    position: "CTO",
     image: teamPlaceholder,
-    linkedin: "https://linkedin.com/in/michaeljohnson",
-    bio: "Product strategist with deep understanding of poultry farming challenges. Built multiple farmer-focused mobile applications.",
+    linkedin: "",
+    bio: "AI & creative technology",
   },
   {
-    name: "Sarah Williams",
-    position: "Lead Data Scientist",
+    name: "Sheena Prasad",
+    position: "Marketing Director",
     image: teamPlaceholder,
-    linkedin: "https://linkedin.com/in/sarahwilliams",
-    bio: "AI/ML expert developing predictive models for livestock health and feed optimization. PhD in Agricultural Data Science.",
-  },
-  {
-    name: "David Brown",
-    position: "VP of Engineering",
-    image: teamPlaceholder,
-    linkedin: "https://linkedin.com/in/davidbrown",
-    bio: "Full-stack engineer with expertise in cloud architecture and offline-first mobile applications. Built systems serving 100k+ users.",
-  },
-  {
-    name: "Emily Davis",
-    position: "Head of Partnerships",
-    image: teamPlaceholder,
-    linkedin: "https://linkedin.com/in/emilydavis",
-    bio: "Strategic partnerships leader connecting farmers with veterinary networks, input suppliers, and financial institutions.",
+    linkedin: "",
+    bio: "Climate tech branding",
   },
 ];
 
@@ -160,12 +146,14 @@ const About = () => {
                 className="overflow-hidden hover-lift border-2 hover:border-primary/50 transition-all"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="aspect-square overflow-hidden bg-muted">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  />
+                <div className="flex justify-center pt-6 pb-4">
+                  <div className="w-32 h-32 rounded-full overflow-hidden bg-muted">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    />
+                  </div>
                 </div>
                 <div className="p-6 space-y-4">
                   <div>
