@@ -3,20 +3,22 @@ import { Button } from "@/components/ui/button";
 import { Linkedin, Target, Eye, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import teamPlaceholder from "@/assets/team-placeholder.jpg";
+import peterPhoto from "@/assets/peter-krahenbuhl.jpg";
+import abisaiPhoto from "@/assets/abisai-nandi.jpg";
 
 const team = [
   {
     name: "Peter Davis Krahenbuhl",
     position: "CEO",
-    image: teamPlaceholder,
-    linkedin: "",
+    image: peterPhoto,
+    linkedin: "https://www.linkedin.com/in/peterkrahenbuhl/",
     bio: "Global Sustainability expert",
   },
   {
     name: "Abisai Nandi",
     position: "Founder & CIO",
-    image: teamPlaceholder,
-    linkedin: "",
+    image: abisaiPhoto,
+    linkedin: "https://www.linkedin.com/in/abisai-nandi-443405145/",
     bio: "10+ years in the agribusiness industry, with over 10,000+ farmer relationships",
   },
   {
