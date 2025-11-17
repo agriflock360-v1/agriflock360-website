@@ -33,6 +33,13 @@ const team = [
     linkedin: "",
     bio: "Climate tech branding",
   },
+  {
+    name: "James Obimbo",
+    position: "CFO",
+    image: teamPlaceholder,
+    linkedin: "",
+    bio: "",
+  },
 ];
 
 const values = [
