@@ -60,11 +60,11 @@ const Vaccination = () => {
                 record, monitor, and verify vaccination schedules digitally.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button variant="hero" size="lg">
-                  Start Tracking
+                <Button variant="hero" size="lg" asChild>
+                  <Link to="/download">Start Tracking</Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/about">Contact Sales</Link>
+                  <Link to="/download">Contact Sales</Link>
                 </Button>
               </div>
             </div>

@@ -60,11 +60,11 @@ const Feeding = () => {
                 for smallholder farmers managing 300–1,000 birds.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button variant="accent" size="lg">
-                  Start Optimizing
+                <Button variant="accent" size="lg" asChild>
+                  <Link to="/download">Start Optimizing</Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/about">Learn More</Link>
+                  <Link to="/download">Learn More</Link>
                 </Button>
               </div>
             </div>

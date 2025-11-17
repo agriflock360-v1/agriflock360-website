@@ -10,6 +10,7 @@ import Vaccination from "./pages/Vaccination";
 import Feeding from "./pages/Feeding";
 import Brooder from "./pages/Brooder";
 import About from "./pages/About";
+import Download from "./pages/Download";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/feeding" element={<Feeding />} />
               <Route path="/brooder" element={<Brooder />} />
               <Route path="/about" element={<About />} />
+              <Route path="/download" element={<Download />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

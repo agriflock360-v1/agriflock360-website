@@ -41,8 +41,8 @@ export const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="hero" size="sm" className="ml-4">
-              Get Started
+            <Button variant="hero" size="sm" className="ml-4" asChild>
+              <Link to="/download">Get Started</Link>
             </Button>
           </div>
 
@@ -77,8 +77,8 @@ export const Navbar = () => {
               </Link>
             ))}
             <div className="px-4 pt-4">
-              <Button variant="hero" size="sm" className="w-full">
-                Get Started
+              <Button variant="hero" size="sm" className="w-full" asChild>
+                <Link to="/download">Get Started</Link>
               </Button>
             </div>
           </div>

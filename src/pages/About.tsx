@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Target, Eye, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import teamPlaceholder from "@/assets/team-placeholder.jpg";
 
 const team = [
@@ -229,11 +230,11 @@ const About = () => {
             Partner with us to transform smallholder poultry farming
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="accent" size="lg">
-              Become a Partner
+            <Button variant="accent" size="lg" asChild>
+              <Link to="/download">Become a Partner</Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-secondary">
-              Contact Us
+            <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-secondary" asChild>
+              <Link to="/download">Contact Us</Link>
             </Button>
           </div>
         </div>

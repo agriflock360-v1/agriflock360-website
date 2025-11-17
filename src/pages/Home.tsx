@@ -80,12 +80,12 @@ const Home = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button variant="hero" size="lg" asChild>
-                <Link to="/about">
+                <Link to="/download">
                   Explore Platform <ArrowRight className="ml-2" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/vaccination">View Modules</Link>
+                <Link to="/download">View Modules</Link>
               </Button>
             </div>
 
@@ -136,7 +136,7 @@ const Home = () => {
                 <h3 className="text-2xl font-bold mb-4">{module.title}</h3>
                 <p className="text-muted-foreground mb-6">{module.description}</p>
                 <Button variant="ghost" asChild className="group">
-                  <Link to={module.href}>
+                  <Link to="/download">
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -174,7 +174,7 @@ const Home = () => {
             Join the digital agriculture revolution with AgriFlock360's complete IoT ecosystem
           </p>
           <Button variant="accent" size="lg" asChild>
-            <Link to="/about">
+            <Link to="/download">
               Get Started Today <ArrowRight className="ml-2" />
             </Link>
           </Button>

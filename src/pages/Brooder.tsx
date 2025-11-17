@@ -67,11 +67,11 @@ const Brooder = () => {
                 AI alerts, and 100% solar-powered energy systems.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button variant="hero" size="lg">
-                  Connect Device
+                <Button variant="hero" size="lg" asChild>
+                  <Link to="/download">Connect Device</Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/about">View Demo</Link>
+                  <Link to="/download">View Demo</Link>
                 </Button>
               </div>
             </div>
