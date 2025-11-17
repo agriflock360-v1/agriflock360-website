@@ -98,7 +98,7 @@ export const Footer = () => {
           <p className="mt-2">
             Developed by{" "}
             <a 
-              href="https://mglobalbusiness.com" 
+              href="https://mglobalbusinessconultancy.netlify.app" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-primary hover:text-primary/80 transition-colors font-medium"
