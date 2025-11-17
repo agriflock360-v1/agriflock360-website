@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import teamPlaceholder from "@/assets/team-placeholder.jpg";
 import peterPhoto from "@/assets/peter-krahenbuhl.jpg";
 import abisaiPhoto from "@/assets/abisai-nandi.jpg";
+import jamesPhoto from "@/assets/james-obimbo.png";
+import sheenaPhoto from "@/assets/sheena-prasad.png";
 
 const team = [
   {
@@ -31,15 +33,15 @@ const team = [
   {
     name: "Sheena Prasad",
     position: "Marketing Director",
-    image: teamPlaceholder,
-    linkedin: "",
+    image: sheenaPhoto,
+    linkedin: "https://www.linkedin.com/in/sheenaprasad/",
     bio: "Climate tech branding",
   },
   {
     name: "James Obimbo",
     position: "CFO",
-    image: teamPlaceholder,
-    linkedin: "",
+    image: jamesPhoto,
+    linkedin: "https://www.linkedin.com/in/jamesobimbo/",
     bio: "",
   },
 ];
