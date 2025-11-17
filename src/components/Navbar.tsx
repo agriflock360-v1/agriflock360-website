@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import mglobalLogo from "@/assets/mglobal-logo.jpg";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -20,9 +21,7 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2 shrink-0">
-            <div className="w-10 h-10 gradient-hero rounded-lg flex items-center justify-center shadow-glow">
-              <span className="text-white font-bold text-xl">A</span>
-            </div>
+            <img src={mglobalLogo} alt="M'Global Farm Logo" className="w-10 h-10 rounded-lg object-contain" />
             <span className="text-lg sm:text-xl font-bold text-gradient whitespace-nowrap">AgriFlock360</span>
           </Link>
 
