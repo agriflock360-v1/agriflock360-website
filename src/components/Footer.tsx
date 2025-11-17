@@ -95,6 +95,17 @@ export const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} AgriFlock360. All rights reserved.</p>
+          <p className="mt-2">
+            Developed by{" "}
+            <a 
+              href="https://mglobalbusiness.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              M'Global Business Consultancy
+            </a>
+          </p>
         </div>
       </div>
     </footer>
