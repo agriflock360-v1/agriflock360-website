@@ -136,7 +136,7 @@ const Home = () => {
                 <h3 className="text-2xl font-bold mb-4">{module.title}</h3>
                 <p className="text-muted-foreground mb-6">{module.description}</p>
                 <Button variant="ghost" asChild className="group">
-                  <Link to="/download">
+                  <Link to={module.href}>
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
