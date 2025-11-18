@@ -14,14 +14,14 @@ const team = [
     position: "CEO",
     image: peterPhoto,
     linkedin: "https://www.linkedin.com/in/peterkrahenbuhl/",
-    bio: "Global Sustainability expert",
+    bio: "Mission-driven business, sustainability and communications leader with decades of experience guiding business, government and NGOs in global climate, equity, and impact ventures. Co-founder and former President of Sustainable Travel International & currently on the Advisory Committee for the Global ESG Leadership Organization. At AgriFlock 360, Peter leads strategic growth, partnerships, and sustainably-aligned business development, positioning the company at the intersection of regenerative agriculture, fintech, and carbon innovation.",
   },
   {
     name: "Abisai Nandi",
     position: "Founder & CIO",
     image: abisaiPhoto,
     linkedin: "https://www.linkedin.com/in/abisai-nandi-443405145/",
-    bio: "10+ years in the agribusiness industry, with over 10,000+ farmer relationships",
+    bio: "Agritech entrepreneur with 10+ years of experience working alongside 10,000+ smallholder poultry farmers across Africa. As the visionary behind AgriFlock 360, Abisai brings deep market insight and a farmer-first approach to product design. He leads innovation across AI, regenerative agriculture, and carbon credit readiness, ensuring AgriFlock delivers scalable, tech-enabled solutions to the communities that need them most.",
   },
   {
     name: "Chris Moore",
@@ -35,14 +35,14 @@ const team = [
     position: "Marketing Director",
     image: sheenaPhoto,
     linkedin: "https://www.linkedin.com/in/sheenaprasad/",
-    bio: "Climate tech branding",
+    bio: "Creative marketer with 10+ years of experience growing mission-driven brands and digital platforms rooted in social and environmental impact.  Known for aligning mission with messaging, Sheena drives AGRIFLOCK 360’s brand growth, digital engagement, and bridging farmer-focused communication with global platform visibility.",
   },
   {
     name: "James Obimbo",
     position: "CFO",
     image: jamesPhoto,
     linkedin: "https://www.linkedin.com/in/jamesobimbo/",
-    bio: "",
+    bio: "Finance expert with certifications in CPA(K), CIFA, and CFA, specializing in capital raising, financial modeling, and strategic advising for agribusiness in Africa. James brings deep expertise in capital raising, financial modeling, governance, and investor relations to support AGRIFLOCK 360’s sustainable growth.",
   },
 ];
 
