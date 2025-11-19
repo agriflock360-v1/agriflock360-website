@@ -33,7 +33,7 @@ const features = [
   {
     icon: Bell,
     title: "Smart Alerts",
-    description: "Instant notifications for critical conditions, power failures, sensor issues, low wtaer & feed levels",
+    description: "Instant notifications for critical conditions, power failures, sensor issues, low water & feed levels",
   },
 ];
 
