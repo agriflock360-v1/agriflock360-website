@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock } from "lucide-react";
+import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap } from "lucide-react";
 import heroImage from "@/assets/hero-farm.jpg";
 
 const modules = [
@@ -11,6 +12,7 @@ const modules = [
     icon: Activity,
     href: "/vaccination",
     color: "text-primary",
+    available: true,
   },
   {
     title: "Precision Feeding Analytics",
@@ -18,6 +20,7 @@ const modules = [
     icon: Sprout,
     href: "/feeding",
     color: "text-accent",
+    available: true,
   },
   {
     title: "Solar Smart Brooder IoT",
@@ -25,6 +28,49 @@ const modules = [
     icon: Zap,
     href: "/brooder",
     color: "text-primary-glow",
+    available: true,
+  },
+  {
+    title: "AI Analytics & Record Keeping",
+    description: "Automated farm insights and performance data with intelligent record management and analytics.",
+    icon: BarChart3,
+    color: "text-primary",
+    available: false,
+  },
+  {
+    title: "Real-Time Disease Detection",
+    description: "AI algorithms that monitor flock health, detect early disease signs, and recommend treatment.",
+    icon: AlertTriangle,
+    color: "text-accent",
+    available: false,
+  },
+  {
+    title: "Production Forecasting & Quotations",
+    description: "Predict production costs, outputs, and profitability with accurate forecasting tools.",
+    icon: TrendingUp,
+    color: "text-primary-glow",
+    available: false,
+  },
+  {
+    title: "Direct Market Linkages",
+    description: "Connect farmers to reliable buyers of grown chickens and verified input suppliers.",
+    icon: ShoppingBag,
+    color: "text-primary",
+    available: false,
+  },
+  {
+    title: "Blockchain Traceability",
+    description: "Complete transparency from farm to fork with secure blockchain-based product tracking.",
+    icon: GitBranch,
+    color: "text-accent",
+    available: false,
+  },
+  {
+    title: "E-Extension Services",
+    description: "On-demand training, advisory support, and vaccination services for continuous learning.",
+    icon: GraduationCap,
+    color: "text-primary-glow",
+    available: false,
   },
 ];
 
@@ -131,15 +177,26 @@ const Home = () => {
                 className="p-8 hover-lift bg-card border-2 hover:border-primary/50 transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <module.icon className={`h-12 w-12 ${module.color} mb-6`} />
+                <div className="flex justify-between items-start mb-6">
+                  <module.icon className={`h-12 w-12 ${module.color}`} />
+                  {!module.available && (
+                    <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
+                  )}
+                </div>
                 <h3 className="text-2xl font-bold mb-4">{module.title}</h3>
                 <p className="text-muted-foreground mb-6">{module.description}</p>
-                <Button variant="ghost" asChild className="group">
-                  <Link to={module.href}>
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
+                {module.available ? (
+                  <Button variant="ghost" asChild className="group">
+                    <Link to={module.href!}>
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                ) : (
+                  <Button variant="ghost" disabled className="cursor-not-allowed opacity-60">
+                    Coming Soon
+                  </Button>
+                )}
               </Card>
             ))}
           </div>
