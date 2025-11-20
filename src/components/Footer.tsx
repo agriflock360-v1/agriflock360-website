@@ -7,8 +7,8 @@ export const Footer = () => {
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+          <div className="space-y-4 text-center sm:text-left">
+            <div className="flex items-center space-x-2 justify-center sm:justify-start">
               <img src={agriflockLogo} alt="AgriFlock 360 Logo" className="w-10 h-10 rounded-lg object-contain" />
               <span className="text-xl font-bold">AgriFlock360</span>
             </div>
@@ -17,7 +17,7 @@ export const Footer = () => {
             </p>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -38,7 +38,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -64,23 +64,23 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="font-semibold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm mb-6">
-              <li className="flex items-center space-x-2">
+              <li className="flex items-center space-x-2 justify-center sm:justify-start">
                 <Mail className="h-4 w-4 text-primary" />
                 <a href="mailto:info@agriflock360.io" className="hover:text-primary transition-colors">
                   info@agriflock360.io
                 </a>
               </li>
-              <li className="flex items-center space-x-2">
+              <li className="flex items-center space-x-2 justify-center sm:justify-start">
                 <Phone className="h-4 w-4 text-primary" />
                 <a href="tel:+1234567890" className="hover:text-primary transition-colors">
                   +123 456 7890
                 </a>
               </li>
             </ul>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 justify-center sm:justify-start">
               <a href="#" className="text-primary hover:text-primary/80 transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
