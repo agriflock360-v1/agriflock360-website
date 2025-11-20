@@ -9,6 +9,10 @@ import abisaiPhoto from "@/assets/abisai-nandi.jpg";
 import jamesPhoto from "@/assets/james-obimbo.png";
 import sheenaPhoto from "@/assets/sheena-prasad.png";
 import mglobalLogo from "@/assets/mglobal-logo.jpg";
+import mititiPhoto from "@/assets/mititi-isaac.jpg";
+import mumbuaPhoto from "@/assets/mumbua-mutuku.jpeg";
+import dicksonPhoto from "@/assets/dickson-mumo.jpeg";
+import hemstonePhoto from "@/assets/hemstone-alumasa.jpg";
 
 const team = [
   {
@@ -52,25 +56,25 @@ const engineeringTeam = [
   {
     name: "Mititi Isaac",
     position: "Frontend & Lead Engineer",
-    image: teamPlaceholder,
+    image: mititiPhoto,
     linkedin: "https://www.linkedin.com/in/io-mititi/",
   },
   {
     name: "Mumbua Mutuku",
     position: "Backend & DevOps Engineer",
-    image: teamPlaceholder,
+    image: mumbuaPhoto,
     linkedin: "https://www.linkedin.com/in/mumbuamutuku",
   },
   {
     name: "Dickson Mumo",
     position: "IoT Engineer",
-    image: teamPlaceholder,
+    image: dicksonPhoto,
     linkedin: "https://www.linkedin.com/in/dickson-mumo-4bba7697/",
   },
   {
     name: "Hemstone Alumasa",
     position: "Mobile App Engineer",
-    image: teamPlaceholder,
+    image: hemstonePhoto,
     linkedin: "https://www.linkedin.com/in/hemstone-alumasa-software-engineer/",
   },
 ];
