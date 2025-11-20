@@ -53,21 +53,25 @@ const engineeringTeam = [
     name: "Engineer Name 1",
     position: "Role/Title",
     image: teamPlaceholder,
+    linkedin: "",
   },
   {
     name: "Engineer Name 2",
     position: "Role/Title",
     image: teamPlaceholder,
+    linkedin: "",
   },
   {
     name: "Engineer Name 3",
     position: "Role/Title",
     image: teamPlaceholder,
+    linkedin: "",
   },
   {
     name: "Engineer Name 4",
     position: "Role/Title",
     image: teamPlaceholder,
+    linkedin: "",
   },
 ];
 
@@ -233,7 +237,7 @@ const About = () => {
                 <div className="text-center space-y-3">
                   <h3 className="text-2xl font-bold">Engineering Team</h3>
                   <a
-                    href="https://www.mglobal.co.ke"
+                    href="https://mglobalbusinessconsultancy.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-lg"
@@ -257,6 +261,17 @@ const About = () => {
                         <p className="font-semibold text-sm">{engineer.name}</p>
                         <p className="text-xs text-muted-foreground">{engineer.position}</p>
                       </div>
+                      {engineer.linkedin && (
+                        <a
+                          href={engineer.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
+                          aria-label={`${engineer.name} LinkedIn`}
+                        >
+                          <Linkedin className="h-4 w-4" />
+                        </a>
+                      )}
                     </div>
                   ))}
                 </div>
