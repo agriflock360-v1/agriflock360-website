@@ -48,7 +48,7 @@ const Vaccination = () => {
             <div className="space-y-6 animate-fade-in">
               <div className="inline-block">
                 <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
-                  Health Module
+                  Health Service
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">

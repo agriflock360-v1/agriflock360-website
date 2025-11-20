@@ -55,7 +55,7 @@ const Brooder = () => {
             <div className="space-y-6 animate-fade-in">
               <div className="inline-block">
                 <span className="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold border border-accent/20">
-                  IoT Module
+                  IoT Service
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
@@ -197,7 +197,7 @@ const Brooder = () => {
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-primary mt-2" />
                   <div>
-                    <h3 className="font-semibold">Connectivity Module</h3>
+                    <h3 className="font-semibold">Connectivity Component</h3>
                     <p className="text-sm text-muted-foreground">GSM/4G SIM800L or Wi-Fi ESP32 for data transmission</p>
                   </div>
                 </div>

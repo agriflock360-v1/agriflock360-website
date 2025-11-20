@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap } from "lucide-react";
 import heroImage from "@/assets/hero-farm.jpg";
 
-const modules = [
+const services = [
   {
     title: "Vaccination & Health Tracking",
     description: "Reduce preventable chick mortality with digital vaccination schedules, alerts, and veterinary verification.",
@@ -131,7 +131,7 @@ const Home = () => {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/download">View Modules</Link>
+                <Link to="/download">View Services</Link>
               </Button>
             </div>
 
@@ -159,7 +159,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Modules Section */}
+      {/* Services Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
@@ -172,23 +172,23 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {modules.map((module, index) => (
+            {services.map((service, index) => (
               <Card
-                key={module.title}
+                key={service.title}
                 className="p-8 hover-lift bg-card border-2 hover:border-primary/50 transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex justify-between items-start mb-6">
-                  <module.icon className={`h-12 w-12 ${module.color}`} />
-                  {!module.available && (
+                  <service.icon className={`h-12 w-12 ${service.color}`} />
+                  {!service.available && (
                     <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
                   )}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{module.title}</h3>
-                <p className="text-muted-foreground mb-6">{module.description}</p>
-                {module.available ? (
+                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
+                {service.available ? (
                   <Button variant="ghost" asChild className="group">
-                    <Link to={module.href!}>
+                    <Link to={service.href!}>
                       Learn More
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Link>

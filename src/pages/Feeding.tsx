@@ -48,7 +48,7 @@ const Feeding = () => {
             <div className="space-y-6 animate-fade-in">
               <div className="inline-block">
                 <span className="px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold border border-accent/20">
-                  Feeding Module
+                  Feeding Service
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
