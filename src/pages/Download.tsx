@@ -13,33 +13,33 @@ const Download = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full gradient-hero mb-4 sm:mb-6">
-            <Smartphone className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+      <div className="container mx-auto px-4 py-8 sm:py-12">
+        <div className="max-w-4xl mx-auto text-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full gradient-hero mb-3 sm:mb-4">
+            <Smartphone className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gradient px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-gradient px-4">
             Download AgriFlock360
           </h1>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
             Take your poultry farm management to the next level. Download our mobile app and manage your operations on the go.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto mb-6 sm:mb-8">
           {/* Google Play Store */}
-          <Card className="p-6 sm:p-8 hover-lift border-2 border-primary/20 bg-card/50 backdrop-blur">
+          <Card className="p-4 sm:p-6 hover-lift border-2 border-primary/20 bg-card/50 backdrop-blur">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-4 sm:mb-6">
-                <img src={googlePlayIcon} alt="Google Play Store" className="w-20 h-20 sm:w-24 sm:h-24" />
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4">
+                <img src={googlePlayIcon} alt="Google Play Store" className="w-16 h-16 sm:w-20 sm:h-20" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-2">Android</h3>
-              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">Download from Google Play Store</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Android</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">Download from Google Play Store</p>
               
               {/* QR Code */}
-              <div className="bg-white p-3 sm:p-4 rounded-lg inline-block mb-4 sm:mb-6">
-                <img src={qrAndroid} alt="Android QR Code" className="w-36 h-36 sm:w-48 sm:h-48" />
-                <p className="text-xs text-gray-500 mt-2">Scan to download</p>
+              <div className="bg-white p-2 sm:p-3 rounded-lg inline-block mb-3 sm:mb-4">
+                <img src={qrAndroid} alt="Android QR Code" className="w-28 h-28 sm:w-36 sm:h-36" />
+                <p className="text-xs text-gray-500 mt-1 sm:mt-2">Scan to download</p>
               </div>
 
               <Button 
@@ -55,18 +55,18 @@ const Download = () => {
           </Card>
 
           {/* Apple App Store */}
-          <Card className="p-6 sm:p-8 hover-lift border-2 border-accent/20 bg-card/50 backdrop-blur">
+          <Card className="p-4 sm:p-6 hover-lift border-2 border-accent/20 bg-card/50 backdrop-blur">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mb-4 sm:mb-6">
-                <img src={appleIcon} alt="Apple App Store" className="w-20 h-20 sm:w-24 sm:h-24" />
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4">
+                <img src={appleIcon} alt="Apple App Store" className="w-16 h-16 sm:w-20 sm:h-20" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-2">iOS</h3>
-              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">Download from App Store</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">iOS</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">Download from App Store</p>
               
               {/* QR Code */}
-              <div className="bg-white p-3 sm:p-4 rounded-lg inline-block mb-4 sm:mb-6">
-                <img src={qrIos} alt="iOS QR Code" className="w-36 h-36 sm:w-48 sm:h-48" />
-                <p className="text-xs text-gray-500 mt-2">Scan to download</p>
+              <div className="bg-white p-2 sm:p-3 rounded-lg inline-block mb-3 sm:mb-4">
+                <img src={qrIos} alt="iOS QR Code" className="w-28 h-28 sm:w-36 sm:h-36" />
+                <p className="text-xs text-gray-500 mt-1 sm:mt-2">Scan to download</p>
               </div>
 
               <Button 
@@ -83,7 +83,7 @@ const Download = () => {
         </div>
 
         {/* Additional Info */}
-        <Card className="max-w-3xl mx-auto p-8 bg-card/50 backdrop-blur border-2 border-primary/20">
+        <Card className="max-w-3xl mx-auto p-4 sm:p-6 bg-card/50 backdrop-blur border-2 border-primary/20">
           <h3 className="text-2xl font-bold mb-4 text-center">Why Download AgriFlock360?</h3>
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
