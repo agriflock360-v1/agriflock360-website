@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Target, Eye, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import teamPlaceholder from "@/assets/team-placeholder.jpg";
 import peterPhoto from "@/assets/peter-krahenbuhl.jpg";
 import abisaiPhoto from "@/assets/abisai-nandi.jpg";
@@ -65,6 +66,10 @@ const values = [
 ];
 
 const About = () => {
+  const missionSection = useScrollReveal();
+  const teamSection = useScrollReveal();
+  const ctaSection = useScrollReveal();
+  
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
@@ -81,7 +86,12 @@ const About = () => {
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="py-20">
+      <section 
+        ref={missionSection.ref}
+        className={`py-20 opacity-0 ${
+          missionSection.isVisible ? "animate-slide-up-fade" : ""
+        }`}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((value, index) => (
@@ -131,7 +141,12 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20">
+      <section 
+        ref={teamSection.ref}
+        className={`py-20 opacity-0 ${
+          teamSection.isVisible ? "animate-slide-up-fade" : ""
+        }`}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold">
@@ -213,7 +228,12 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 gradient-dark">
+      <section 
+        ref={ctaSection.ref}
+        className={`py-20 gradient-dark opacity-0 ${
+          ctaSection.isVisible ? "animate-slide-up-fade" : ""
+        }`}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Join the Digital Agriculture Revolution

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap } from "lucide-react";
 import heroImage from "@/assets/hero-farm.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
   {
@@ -94,6 +95,9 @@ const features = [
 ];
 
 const Home = () => {
+  const videoSection = useScrollReveal();
+  const featuresSection = useScrollReveal();
+  
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -160,7 +164,12 @@ const Home = () => {
       </section>
 
       {/* Video Section */}
-      <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background">
+      <section 
+        ref={videoSection.ref}
+        className={`relative py-12 sm:py-16 md:py-20 overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background opacity-0 ${
+          videoSection.isVisible ? "animate-slide-up-fade" : ""
+        }`}
+      >
         {/* Decorative background elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
@@ -328,7 +337,12 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
+      <section 
+        ref={featuresSection.ref}
+        className={`py-20 opacity-0 ${
+          featuresSection.isVisible ? "animate-slide-up-fade" : ""
+        }`}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-12">
             {features.map((feature) => (
