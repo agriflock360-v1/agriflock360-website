@@ -160,99 +160,101 @@ const Home = () => {
       </section>
 
       {/* Video Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background">
+      <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background">
         {/* Decorative background elements */}
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-slow" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-16 space-y-4 animate-fade-in">
-              <Badge className="mb-4 text-sm px-4 py-1.5">Platform Overview</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-gradient">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4 animate-fade-in">
+              <Badge className="mb-2 sm:mb-4 text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-1.5">Platform Overview</Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gradient px-4">
                 What is AgriFlock360?
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
                 A comprehensive digital platform revolutionizing poultry farming through smart technology
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
               {/* Video Container */}
-              <div className="relative group animate-fade-in">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
-                <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl backdrop-blur-sm bg-background/50">
-                  <video
-                    className="w-full h-full object-cover"
-                    controls
-                    preload="metadata"
-                  >
-                    <source src="/AgriFlock360 Video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+              <div className="relative group animate-fade-in order-1">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl sm:rounded-3xl blur-lg sm:blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
+                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl backdrop-blur-sm bg-background/50">
+                  <div className="aspect-video">
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      preload="metadata"
+                    >
+                      <source src="/AgriFlock360 Video.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="space-y-8 animate-fade-in">
-                <p className="text-xl text-foreground leading-relaxed">
+              <div className="space-y-6 sm:space-y-8 animate-fade-in order-2">
+                <p className="text-base sm:text-lg md:text-xl text-foreground leading-relaxed">
                   AgriFlock360 transforms traditional poultry farming into a data-driven, efficient operation with cutting-edge technology and AI-powered insights.
                 </p>
 
-                <div className="space-y-5">
-                  <Card className="p-5 hover-lift border-l-4 border-l-primary bg-card/50 backdrop-blur">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Activity className="w-5 h-5 text-primary" />
+                <div className="space-y-3 sm:space-y-4 md:space-y-5">
+                  <Card className="p-4 sm:p-5 hover-lift border-l-4 border-l-primary bg-card/50 backdrop-blur">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                       </div>
-                      <div>
-                        <h3 className="font-bold text-foreground mb-1">Smart Monitoring</h3>
-                        <p className="text-sm text-muted-foreground">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-sm sm:text-base text-foreground mb-1">Smart Monitoring</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           Real-time tracking of flock health, environmental conditions, and productivity metrics
                         </p>
                       </div>
                     </div>
                   </Card>
 
-                  <Card className="p-5 hover-lift border-l-4 border-l-accent bg-card/50 backdrop-blur">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <BarChart3 className="w-5 h-5 text-accent" />
+                  <Card className="p-4 sm:p-5 hover-lift border-l-4 border-l-accent bg-card/50 backdrop-blur">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
                       </div>
-                      <div>
-                        <h3 className="font-bold text-foreground mb-1">AI-Powered Analytics</h3>
-                        <p className="text-sm text-muted-foreground">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-sm sm:text-base text-foreground mb-1">AI-Powered Analytics</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           Predictive insights for disease prevention, feed optimization, and production forecasting
                         </p>
                       </div>
                     </div>
                   </Card>
 
-                  <Card className="p-5 hover-lift border-l-4 border-l-primary bg-card/50 backdrop-blur">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Zap className="w-5 h-5 text-primary" />
+                  <Card className="p-4 sm:p-5 hover-lift border-l-4 border-l-primary bg-card/50 backdrop-blur">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                       </div>
-                      <div>
-                        <h3 className="font-bold text-foreground mb-1">IoT Integration</h3>
-                        <p className="text-sm text-muted-foreground">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-sm sm:text-base text-foreground mb-1">IoT Integration</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           Solar-powered sensors and automated systems for efficient farm management
                         </p>
                       </div>
                     </div>
                   </Card>
 
-                  <Card className="p-5 hover-lift border-l-4 border-l-accent bg-card/50 backdrop-blur">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <Shield className="w-5 h-5 text-accent" />
+                  <Card className="p-4 sm:p-5 hover-lift border-l-4 border-l-accent bg-card/50 backdrop-blur">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
                       </div>
-                      <div>
-                        <h3 className="font-bold text-foreground mb-1">Offline-First Design</h3>
-                        <p className="text-sm text-muted-foreground">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-sm sm:text-base text-foreground mb-1">Offline-First Design</h3>
+                        <p className="text-xs sm:text-sm text-muted-foreground">
                           Works seamlessly in rural areas with limited connectivity
                         </p>
                       </div>
@@ -260,15 +262,15 @@ const Home = () => {
                   </Card>
                 </div>
 
-                <div className="pt-2 flex gap-4">
+                <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link to="/download" className="flex-1 sm:flex-initial">
-                    <Button size="lg" className="w-full sm:w-auto group gradient-hero">
+                    <Button size="lg" className="w-full sm:w-auto group gradient-hero text-sm sm:text-base">
                       Get Started Today
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                   <Link to="/about" className="flex-1 sm:flex-initial">
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto text-sm sm:text-base">
                       Learn More
                     </Button>
                   </Link>
