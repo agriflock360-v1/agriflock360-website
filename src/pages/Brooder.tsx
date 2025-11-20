@@ -42,6 +42,7 @@ const telemetryData = [
   { label: "Humidity", value: "65%", status: "Optimal", color: "text-primary" },
   { label: "Battery Level", value: "85%", status: "Good", color: "text-accent" },
   { label: "Signal Strength", value: "Strong", status: "Connected", color: "text-primary" },
+  { label: "Feed & Water Level", value: "Low", status: "Refill Needed", color: "text-destructive" },
 ];
 
 const Brooder = () => {
