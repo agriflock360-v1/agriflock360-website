@@ -162,24 +162,62 @@ const Home = () => {
       {/* Video Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12 space-y-4 animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                See AgriFlock 360 in Action
+                What is AgriFlock360
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Watch how our platform transforms poultry farming
-              </p>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-fade-in">
-              <video
-                className="w-full aspect-video"
-                controls
-                preload="metadata"
-              >
-                <source src="/AgriFlock360 Video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-fade-in">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                >
+                  <source src="/AgriFlock360 Video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="space-y-6 animate-fade-in">
+                <p className="text-lg text-muted-foreground">
+                  AgriFlock360 is a comprehensive digital platform designed to revolutionize poultry farming through smart technology and data-driven insights.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                    <p className="text-foreground">
+                      <span className="font-semibold">Smart Monitoring:</span> Real-time tracking of flock health, environmental conditions, and productivity metrics
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                    <p className="text-foreground">
+                      <span className="font-semibold">AI-Powered Analytics:</span> Predictive insights for disease prevention, feed optimization, and production forecasting
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                    <p className="text-foreground">
+                      <span className="font-semibold">IoT Integration:</span> Solar-powered sensors and automated systems for efficient farm management
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                    <p className="text-foreground">
+                      <span className="font-semibold">Offline-First Design:</span> Works seamlessly in rural areas with limited connectivity
+                    </p>
+                  </div>
+                </div>
+                <div className="pt-4">
+                  <Link to="/download">
+                    <Button size="lg" className="group">
+                      Get Started Today
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
