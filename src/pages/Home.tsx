@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap } from "lucide-react";
+import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap, Heart } from "lucide-react";
 import heroImage from "@/assets/hero-farm.jpg";
+import boyWithChicken from "@/assets/boy-with-chicken.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
@@ -96,6 +97,7 @@ const features = [
 
 const Home = () => {
   const videoSection = useScrollReveal();
+  const impactSection = useScrollReveal();
   const featuresSection = useScrollReveal();
   
   return (
@@ -332,6 +334,101 @@ const Home = () => {
                 )}
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Section */}
+      <section 
+        ref={impactSection.ref}
+        className={`py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5 opacity-0 ${
+          impactSection.isVisible ? "animate-slide-up-fade" : ""
+        }`}
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="relative group animate-fade-in order-2 lg:order-1">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+              <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl">
+                <img 
+                  src={boyWithChicken} 
+                  alt="Young farmer with chicken showing the human connection to poultry farming" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="space-y-6 animate-fade-in order-1 lg:order-2">
+              <div className="inline-block">
+                <Badge className="text-sm px-4 py-1.5">
+                  <Heart className="w-4 h-4 mr-2 inline" />
+                  Our Impact
+                </Badge>
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                Empowering the Next Generation of{" "}
+                <span className="text-gradient">Smart Farmers</span>
+              </h2>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Every farmer has a story. AgriFlock360 is more than technology—it's about preserving livelihoods, feeding communities, and creating opportunities for smallholder farmers and their families.
+              </p>
+
+              <div className="space-y-4">
+                <Card className="p-5 border-l-4 border-l-primary bg-card/50 backdrop-blur">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base mb-1">Protecting Livelihoods</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Reducing mortality rates by up to 40% through smart monitoring and early disease detection
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-5 border-l-4 border-l-accent bg-card/50 backdrop-blur">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="w-5 h-5 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base mb-1">Increasing Profitability</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Optimizing feed costs and improving efficiency to boost farm income by 25-30%
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-5 border-l-4 border-l-primary bg-card/50 backdrop-blur">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base mb-1">Building Knowledge</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Providing training and advisory services to help farmers make data-driven decisions
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+
+              <div className="pt-4">
+                <Button variant="hero" size="lg" asChild>
+                  <Link to="/about">
+                    Learn About Our Mission <ArrowRight className="ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
