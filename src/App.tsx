@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Download from "./pages/Download";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import ProcessLogo from "./pages/ProcessLogo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
               <Route path="/download" element={<Download />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-conditions" element={<TermsConditions />} />
+              <Route path="/process-logo" element={<ProcessLogo />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
