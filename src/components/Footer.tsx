@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
-import agriflockLogo from "@/assets/agriflock-logo.jpg";
+import agriflockLogo from "@/assets/agriflock-logo-new.jpg";
 
 export const Footer = () => {
   return (
@@ -8,8 +8,8 @@ export const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div className="space-y-4 text-center sm:text-left">
-            <div className="flex items-center space-x-2 justify-center sm:justify-start">
-              <img src={agriflockLogo} alt="AgriFlock 360 Logo" className="w-10 h-10 rounded-lg object-contain" />
+            <div className="flex items-center space-x-3 justify-center sm:justify-start">
+              <img src={agriflockLogo} alt="AgriFlock 360 Logo" className="w-14 h-14 rounded-lg object-contain" />
               <span className="text-xl font-bold">AgriFlock360</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">

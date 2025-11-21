@@ -9,7 +9,7 @@ import {
 } from "./ui/dropdown-menu";
 import { Menu, X, ChevronDown, Activity, Sprout, Zap, BarChart3, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap } from "lucide-react";
 import { useState } from "react";
-import agriflockLogo from "@/assets/agriflock-logo.jpg";
+import agriflockLogo from "@/assets/agriflock-logo-new.jpg";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -76,8 +76,8 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2 shrink-0">
-            <img src={agriflockLogo} alt="AgriFlock 360 Logo" className="w-10 h-10 rounded-lg object-contain" />
+          <Link to="/" className="flex items-center space-x-3 shrink-0">
+            <img src={agriflockLogo} alt="AgriFlock 360 Logo" className="w-16 h-16 rounded-lg object-contain" />
             <span className="text-lg sm:text-xl font-bold text-gradient whitespace-nowrap">AgriFlock360</span>
           </Link>
 
