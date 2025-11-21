@@ -38,7 +38,7 @@ const team = [
   // },
   {
     name: "Sheena Prasad",
-    position: "Partner & Marketing Director",
+    position: "Marketing Director",
     image: sheenaPhoto,
     linkedin: "https://www.linkedin.com/in/sheenaprasad/",
     bio: "Creative marketer with 10+ years of experience growing mission-driven brands and digital platforms rooted in social and environmental impact.  Known for aligning mission with messaging, Sheena drives AgriFlock360’s brand growth, digital engagement, and bridging farmer-focused communication with global platform visibility.",

@@ -120,8 +120,8 @@ const Home = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Digitizing Smallholder{" "}
-              <span className="text-gradient">Poultry Farming</span>
+              Regenerative Poultry Farming{" "}
+              <span className="text-gradient">With AI Precision</span>
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl">
@@ -185,7 +185,7 @@ const Home = () => {
                 What is AgriFlock360?
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-                A comprehensive digital platform revolutionizing poultry farming through smart technology
+                A comprehensive digital platform that transforms traditional poultry farming into a data-driven, efficient operation with cutting-edge technology and AI-powered insights.
               </p>
             </div>
 
@@ -211,7 +211,7 @@ const Home = () => {
               {/* Content */}
               <div className="space-y-6 sm:space-y-8 animate-fade-in order-2">
                 <p className="text-base sm:text-lg md:text-xl text-foreground leading-relaxed">
-                  AgriFlock360 transforms traditional poultry farming into a data-driven, efficient operation with cutting-edge technology and AI-powered insights.
+                  AgriFlock360 helps smallholder farmers reduce flock mortality, increase efficiencies and profit through sustainable practices.
                 </p>
 
                 <div className="space-y-3 sm:space-y-4 md:space-y-5">
