@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap, Heart } from "lucide-react";
+import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap, Heart, Smartphone } from "lucide-react";
 import heroImage from "@/assets/hero-farm.jpg";
 import boyWithChicken from "@/assets/boy-with-chicken.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -133,11 +133,14 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button variant="hero" size="lg" asChild>
                 <Link to="/download">
-                  Explore Platform <ArrowRight className="ml-2" />
+                  <Smartphone className="mr-2 h-5 w-5" />
+                  Explore via Mobile App <ArrowRight className="ml-2" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="#services">View Services</a>
+                <a href="https://app.agriflock360.io" target="_blank" rel="noopener noreferrer">
+                  Explore via Web App <ArrowRight className="ml-2" />
+                </a>
               </Button>
             </div>
 
@@ -277,15 +280,17 @@ const Home = () => {
                 <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link to="/download" className="flex-1 sm:flex-initial">
                     <Button size="lg" className="w-full sm:w-auto group gradient-hero text-sm sm:text-base">
-                      Get Started Today
+                      <Smartphone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      Explore via Mobile App
                       <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
-                  <Link to="/about" className="flex-1 sm:flex-initial">
+                  <a href="https://app.agriflock360.io" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-initial">
                     <Button variant="outline" size="lg" className="w-full sm:w-auto text-sm sm:text-base">
-                      Learn More
+                      Explore via Web App
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                     </Button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -464,11 +469,19 @@ const Home = () => {
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Join the digital agriculture revolution with AgriFlock360's complete IoT ecosystem
           </p>
-          <Button variant="accent" size="lg" asChild>
-            <Link to="/download">
-              Get Started Today <ArrowRight className="ml-2" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button variant="accent" size="lg" asChild>
+              <Link to="/download">
+                <Smartphone className="mr-2 h-5 w-5" />
+                Explore via Mobile App <ArrowRight className="ml-2" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild className="text-white border-white hover:bg-white hover:text-primary">
+              <a href="https://app.agriflock360.io" target="_blank" rel="noopener noreferrer">
+                Explore via Web App <ArrowRight className="ml-2" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

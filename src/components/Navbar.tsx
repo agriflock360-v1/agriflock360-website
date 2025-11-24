@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { Menu, X, ChevronDown, Activity, Sprout, Zap, BarChart3, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap } from "lucide-react";
+import { Menu, X, ChevronDown, Activity, Sprout, Zap, BarChart3, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap, Smartphone, Monitor } from "lucide-react";
 import { useState } from "react";
 import agriflockLogo from "@/assets/agriflock-logo-new.jpg";
 
@@ -123,9 +123,28 @@ export const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <Button variant="hero" size="sm" className="ml-4" asChild>
-              <Link to="/download">Get Started</Link>
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="hero" size="sm" className="ml-4">
+                  Get Started
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-background border-border z-50">
+                <DropdownMenuItem asChild>
+                  <Link to="/download" className="flex items-center gap-3 cursor-pointer">
+                    <Smartphone className="h-4 w-4 text-primary" />
+                    <span>Explore via Mobile App</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="https://app.agriflock360.io" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 cursor-pointer">
+                    <Monitor className="h-4 w-4 text-primary" />
+                    <span>Explore via Web App</span>
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile menu button */}
@@ -186,9 +205,18 @@ export const Navbar = () => {
               </div>
             </div>
             
-            <div className="px-4 pt-4">
+            <div className="px-4 pt-4 space-y-2">
               <Button variant="hero" size="sm" className="w-full" asChild>
-                <Link to="/download">Get Started</Link>
+                <Link to="/download">
+                  <Smartphone className="mr-2 h-4 w-4" />
+                  Explore via Mobile App
+                </Link>
+              </Button>
+              <Button variant="outline" size="sm" className="w-full" asChild>
+                <a href="https://app.agriflock360.io" target="_blank" rel="noopener noreferrer">
+                  <Monitor className="mr-2 h-4 w-4" />
+                  Explore via Web App
+                </a>
               </Button>
             </div>
           </div>
