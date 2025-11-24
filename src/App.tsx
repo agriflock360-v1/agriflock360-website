@@ -13,6 +13,7 @@ import Brooder from "./pages/Brooder";
 import Analytics from "./pages/Analytics";
 import About from "./pages/About";
 import Download from "./pages/Download";
+import WebApp from "./pages/WebApp";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import ProcessLogo from "./pages/ProcessLogo";
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/about" element={<About />} />
               <Route path="/download" element={<Download />} />
+              <Route path="/web-app" element={<WebApp />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-conditions" element={<TermsConditions />} />
               <Route path="/process-logo" element={<ProcessLogo />} />

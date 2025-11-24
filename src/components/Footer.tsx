@@ -47,9 +47,14 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Contact
-                </a>
+                <Link to="/web-app" className="hover:text-primary transition-colors">
+                  Web App
+                </Link>
+              </li>
+              <li>
+                <Link to="/download" className="hover:text-primary transition-colors">
+                  Mobile App
+                </Link>
               </li>
               <li>
                 <Link to="/privacy-policy" className="hover:text-primary transition-colors">
