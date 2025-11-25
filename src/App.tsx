@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Download from "./pages/Download";
 import WebApp from "./pages/WebApp";
 import ComingSoon from "./pages/ComingSoon";
+import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import ProcessLogo from "./pages/ProcessLogo";
@@ -39,6 +40,7 @@ const App = () => (
               <Route path="/brooder" element={<Brooder />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/download" element={<Download />} />
               <Route path="/web-app" element={<WebApp />} />
               <Route path="/coming-soon" element={<ComingSoon />} />

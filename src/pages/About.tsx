@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Linkedin, Target, Eye, Zap, ExternalLink } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import teamPlaceholder from "@/assets/team-placeholder.jpg";
@@ -323,15 +324,14 @@ const About = () => {
             Partner with us to transform smallholder poultry farming
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="accent" 
-              size="lg"
-              onClick={() => {
-                document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Become a Partner
-            </Button>
+            <Link to="/contact">
+              <Button 
+                variant="accent" 
+                size="lg"
+              >
+                Become a Partner
+              </Button>
+            </Link>
             <Button 
               variant="outline" 
               size="lg" 
