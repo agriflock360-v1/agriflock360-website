@@ -103,23 +103,15 @@ const faqs = [
   },
   {
     question: "Who can use AgriFlock360?",
-    answer: "Any poultry farmer, from smallholder to mid-scale, can use the platform to improve productivity and profitability. It is currently being deployed across Kenya. Extension officers to help them diagnose better and provide vaccination services. Poultry vendors and off-takers to access the farmers and buy grown chicken and eggs. Input providers to distribute and sell inputs."
+    answer: "Any poultry farmer, from smallholder to mid-scale, can use the platform to improve productivity and profitability. It is currently being deployed across Kenya & the US. Extension officers to help them diagnose better and provide vaccination services. Poultry vendors and off-takers to access the farmers and buy grown chicken and eggs. Input providers to distribute and sell inputs."
   },
   {
     question: "How do I register as a farmer?",
-    answer: "Download the AgriFlock360 app from the Google Play Store or visit our website. Create an account and follow the prompts to register your farm."
+    answer: "Download the AgriFlock360 app from the Google Play Store & App Store or visit our website. Create an account and follow the prompts to register your farm."
   },
   {
     question: "Is the platform free to use?",
-    answer: "Basic features are free (Quotations, Vaccination calendar alerts etc.) Some advanced features like credit access, insurance, and AI-powered tools may come with a small service fee."
-  },
-  {
-    question: "How can I access financing or loans?",
-    answer: "AgriFlock360 offers a credit module with a check-off repayment system. Farmers can apply through the app and receive loans based on their credit score and farm data also to be rated from the App by the accurate information provided."
-  },
-  {
-    question: "How does the check-off system work?",
-    answer: "Loan repayments are automatically deducted from the proceeds when farmers sell their poultry through the platform or affiliated approved aggregators from the system."
+    answer: "Basic features are free (Quotations & alerts etc.) AI-powered tools may come with a small service fee."
   },
   {
     question: "What kind of AI tools are included?",
@@ -128,10 +120,6 @@ const faqs = [
   {
     question: "How does AgriFlock360 support sustainable farming?",
     answer: "We encourage climate-smart practices like composting, solar brooders, and biogas use, and we are working toward helping farmers earn from carbon credits."
-  },
-  {
-    question: "What kind of insurance does AgriFlock360 offer?",
-    answer: "AgriFlock360 partners with local insurers to offer livestock coverage against common risks like disease, theft, and mortality for layers, broilers and indigenous chickens."
   },
   {
     question: "Can I access the platform without a smartphone?",
