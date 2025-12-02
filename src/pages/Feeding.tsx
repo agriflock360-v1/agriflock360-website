@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Calculator, AlertCircle, LineChart, Scale, Droplet } from "lucide-react";
 import { Link } from "react-router-dom";
-import feedingImage from "@/assets/feeding-module.jpg";
+import feedingImage from "@/assets/feeding-hero.jpg";
 
 const features = [
   {
