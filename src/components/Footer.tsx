@@ -112,7 +112,7 @@ export const Footer = () => {
           <p>
             Developed by{" "}
             <a 
-              href="https://mglobalbusinessconsultancy.netlify.app" 
+              href="https://mglobalbusinessconsultancy.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-primary hover:text-primary/80 transition-colors font-medium"

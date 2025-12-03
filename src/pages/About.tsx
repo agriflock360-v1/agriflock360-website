@@ -241,7 +241,7 @@ const About = () => {
                 <div className="text-center space-y-3">
                   <h3 className="text-2xl font-bold">Engineering Team</h3>
                   <a
-                    href="https://mglobalbusinessconsultancy.netlify.app"
+                    href="https://mglobalbusinessconsultancy.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-lg"
