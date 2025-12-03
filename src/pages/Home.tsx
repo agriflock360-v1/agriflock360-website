@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap, Heart, Smartphone, HelpCircle } from "lucide-react";
-import heroImage from "@/assets/hero-poultry-farm.jpg";
+import heroImage from "@/assets/feeding-hero.jpg";
 import boyWithChicken from "@/assets/boy-with-chicken.png";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
