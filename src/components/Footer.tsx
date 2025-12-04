@@ -81,7 +81,7 @@ export const Footer = () => {
               <li className="flex items-center space-x-2 justify-center sm:justify-start">
                 <Phone className="h-4 w-4 text-primary" />
                 <a href="tel:+254729554434" className="hover:text-primary transition-colors">
-                  Kenyan Contact: +254 729 554 434
+                  Kenya Contact: +254 729 554 434
                 </a>
               </li>
             </ul>
