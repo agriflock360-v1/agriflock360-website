@@ -84,6 +84,12 @@ export const Footer = () => {
                   Kenya Contact: +254 729 554 434
                 </a>
               </li>
+              <li className="flex items-center space-x-2 justify-center sm:justify-start">
+                <Phone className="h-4 w-4 text-primary" />
+                <a href="tel:+16674469432" className="hover:text-primary transition-colors">
+                  US Contact: +1 667 446 9432
+                </a>
+              </li>
             </ul>
             <div className="flex items-center gap-4 justify-center sm:justify-start">
               <a href="https://www.linkedin.com/company/agriflock-360" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors" aria-label="LinkedIn">
