@@ -74,8 +74,8 @@ export const Footer = () => {
             <ul className="space-y-3 text-sm mb-6">
               <li className="flex items-center space-x-2 justify-center sm:justify-start">
                 <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:info@agriflock360.io" className="hover:text-primary transition-colors">
-                  info@agriflock360.io
+                <a href="mailto:admin@agriflock360.com" className="hover:text-primary transition-colors">
+                  admin@agriflock360.com
                 </a>
               </li>
               <li className="flex items-center space-x-2 justify-center sm:justify-start">
