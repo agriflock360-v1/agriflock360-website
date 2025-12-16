@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Activity, Sprout, Zap, BarChart3, Shield, Clock, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap, Heart, Smartphone, HelpCircle } from "lucide-react";
 import heroImage from "@/assets/hero-poultry-farm.jpg";
 import boyWithChicken from "@/assets/boy-with-chicken.png";
+import farmImage from "@/assets/A360_Farm_Image.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
@@ -244,15 +245,11 @@ const Home = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl sm:rounded-3xl blur-lg sm:blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
                 <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl backdrop-blur-sm bg-background/50">
                   <div className="aspect-[4/3] sm:aspect-video">
-                    <video
-                      className="w-full h-full object-contain bg-black/5"
-                      controls
-                      preload="metadata"
-                      poster={heroImage}
-                    >
-                      <source src="/AgriFlock360 Video.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                    <img
+                      src={farmImage}
+                      alt="AgriFlock 360 - Regenerative poultry farming with AI precision"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
