@@ -171,7 +171,7 @@ const Home = () => {
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl">
-              Transform your poultry operations with IoT-integrated smart solar brooders, AI analytics, multiple integrated productivity tools and trace your chicken from farm to fork through blockchain technology.
+              Transforming poultry operations with IoT-integrated smart solar brooders, AI analytics, integrated productivity tools and farm to fork blockchain traceability.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
