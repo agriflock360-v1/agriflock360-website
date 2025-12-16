@@ -244,11 +244,11 @@ const Home = () => {
               <div className="relative group animate-fade-in order-1">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl sm:rounded-3xl blur-lg sm:blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500" />
                 <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl backdrop-blur-sm bg-background/50">
-                  <div className="aspect-[4/3] sm:aspect-video">
+                  <div className="aspect-[16/9]">
                     <img
                       src={farmImage}
                       alt="AgriFlock 360 - Regenerative poultry farming with AI precision"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
