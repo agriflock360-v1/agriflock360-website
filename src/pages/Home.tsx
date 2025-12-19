@@ -155,7 +155,7 @@ const Home = () => {
             alt="Modern smart poultry farm"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/30" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -166,9 +166,9 @@ const Home = () => {
               </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg [text-shadow:_0_2px_12px_rgb(0_0_0_/_40%)]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Regenerative Poultry Farming{" "}
-              <span className="text-gradient drop-shadow-md">With AI Precision</span>
+              <span className="text-gradient">With AI Precision</span>
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl">
