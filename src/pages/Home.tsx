@@ -166,9 +166,9 @@ const Home = () => {
               </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg [text-shadow:_0_2px_12px_rgb(0_0_0_/_40%)]">
               Regenerative Poultry Farming{" "}
-              <span className="text-gradient">With AI Precision</span>
+              <span className="text-gradient drop-shadow-md">With AI Precision</span>
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl">
