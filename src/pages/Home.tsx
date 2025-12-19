@@ -155,7 +155,7 @@ const Home = () => {
             alt="Modern smart poultry farm"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-background/10" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20">
