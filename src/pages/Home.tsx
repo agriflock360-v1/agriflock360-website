@@ -8,7 +8,7 @@ import heroImage from "@/assets/chicks-hero.webp";
 import boyWithChicken from "@/assets/boy-with-chicken.png";
 import farmImage from "@/assets/A360_Farm_Image.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
+import { useState, useEffect } from "react";
 const services = [
   {
     title: "Vaccination & Health Tracking",
@@ -144,6 +144,15 @@ const Home = () => {
   const videoSection = useScrollReveal();
   const impactSection = useScrollReveal();
   const featuresSection = useScrollReveal();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   return (
     <div className="min-h-screen">
@@ -154,6 +163,10 @@ const Home = () => {
             src={heroImage}
             alt="Modern smart poultry farm"
             className="w-full h-full object-cover"
+            style={{
+              transform: `translateY(${scrollY * 0.4}px) scale(1.1)`,
+              transition: "transform 0.1s ease-out",
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/30" />
         </div>
