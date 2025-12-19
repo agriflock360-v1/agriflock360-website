@@ -164,7 +164,7 @@ const Home = () => {
             alt="Modern smart poultry farm"
             className="w-full h-full object-cover"
             style={{
-              transform: `translateY(${scrollY * 0.4}px) scale(1.1)`,
+              transform: `translateY(${scrollY * 0.2}px) scale(1.1)`,
               transition: "transform 0.1s ease-out",
             }}
           />
@@ -262,6 +262,10 @@ const Home = () => {
                       src={farmImage}
                       alt="AgriFlock 360 - Regenerative poultry farming with AI precision"
                       className="w-full h-full object-contain"
+                      style={{
+                        transform: `translateY(${Math.max(0, (scrollY - 600) * 0.15)}px)`,
+                        transition: "transform 0.1s ease-out",
+                      }}
                     />
                   </div>
                 </div>
