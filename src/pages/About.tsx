@@ -20,7 +20,7 @@ const team = [
     position: "Co-founder & CEO",
     image: peterPhoto,
     linkedin: "https://www.linkedin.com/in/peterkrahenbuhl/",
-    bio: "Mission-driven business, sustainability and communications leader with decades of experience guiding business, government and NGOs in global climate, equity, and impact ventures. Co-founder and former President of Sustainable Travel International & currently on the Advisory Committee for the Global ESG Leadership Organization. At AgriFlock 360, Peter leads strategic growth, partnerships, and sustainably-aligned business development, positioning the company at the intersection of regenerative agriculture, fintech, and carbon innovation.",
+    bio: "Mission-driven business, sustainability and communications leader with decades of experience guiding business, government and NGOs in global climate, equity, and impact ventures. Co-founder and former President of Sustainable Travel International and advisor to multiple ESG, sustainability and business orgs. At AgriFlock 360, Peter leads strategic growth, partnerships, and sustainably-aligned business development, positioning the company at the intersection of regenerative agriculture, fintech, and carbon innovation.",
   },
   {
     name: "Abisai Nandi",
@@ -83,17 +83,17 @@ const values = [
   {
     icon: Target,
     title: "Our Mission",
-    description: "Empower smallholder poultry farmers with access to finance, markets and technology under one platform, boosting their income by 40%",
+    description: "Empower smallholder poultry farmers with access to smart, sustainable technology, tools and markets under one platform, boosting income by 40%",
   },
   {
     icon: Eye,
     title: "Our Vision",
-    description: "Digitally empowered smallholder poultry farmers driving Africa's sustainable food security",
+    description: "Digitally empowered smallholder poultry farmers driving food security and sustainable livelihoods in Africa and beyond.",
   },
   {
     icon: Zap,
     title: "Our Values",
-    description: "Innovation, Sustainability, Farmer-First Design, Data Privacy, Offline Accessibility, and Continuous Learning.",
+    description: "Innovation, Farmer-First Design, Regenerative, Data Privacy, Offline Accessibility, Continuous Learning and Growth.",
   },
 ];
 
@@ -111,7 +111,7 @@ const About = () => {
             About AgriFlock 360
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto px-4">
-            Pioneering the digital agriculture revolution with AI-powered IoT solutions 
+            Pioneering the regenerative AgTech revolution with AI-powered IoT solutions 
             designed specifically for smallholder poultry farmers.
           </p>
         </div>
@@ -154,7 +154,7 @@ const About = () => {
               <div className="prose prose-slate max-w-none space-y-4 text-muted-foreground">
                 <p>
                   AgriFlock 360 was born from a decade of observation of bottlenecks affecting poultry value chain and farmers losing 
-                  up to 30% of their chicks due to preventable causes.
+                  up to 40% of their chicks due to preventable causes. This combined with expertise in sustainable business and climate solutions. 
                 </p>
                 <p>
                   After years of research, prototyping, and field testing with over 50 farmers across 
@@ -185,7 +185,7 @@ const About = () => {
               Meet Our <span className="text-gradient">Team</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A diverse group of technologists, agriculturalists, and entrepreneurs 
+              A diverse group of technologists, agriculturalists, sustainable business leadersand entrepreneurs 
               passionate about transforming smallholder farming.
             </p>
           </div>
