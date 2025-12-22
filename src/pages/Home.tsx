@@ -389,7 +389,7 @@ const Home = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative group animate-fade-in order-2 lg:order-1">
+            <div className="relative group animate-fade-in">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
               <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl">
                 <img 
@@ -401,7 +401,7 @@ const Home = () => {
             </div>
 
             {/* Content */}
-            <div className="space-y-6 animate-fade-in order-1 lg:order-2">
+            <div className="space-y-6 animate-fade-in">
               <div className="inline-block">
                 <Badge className="text-sm px-4 py-1.5">
                   <Heart className="w-4 h-4 mr-2 inline" />
