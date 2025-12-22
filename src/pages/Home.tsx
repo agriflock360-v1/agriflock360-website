@@ -79,24 +79,6 @@ const services = [
   },
 ];
 
-const features = [
-  {
-    icon: BarChart3,
-    title: "AI-Powered Analytics",
-    description: "Predictive insights for disease prevention and feed optimization",
-  },
-  {
-    icon: Shield,
-    title: "Offline-First Design",
-    description: "Works seamlessly in rural areas with automatic sync",
-  },
-  {
-    icon: Clock,
-    title: "Real-Time Monitoring",
-    description: "Live IoT data updates every 5-10 minutes",
-  },
-];
-
 const faqs = [
   {
     question: "What is AgriFlock 360?",
@@ -143,7 +125,7 @@ const faqs = [
 const Home = () => {
   const videoSection = useScrollReveal();
   const impactSection = useScrollReveal();
-  const featuresSection = useScrollReveal();
+  
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -492,27 +474,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section 
-        ref={featuresSection.ref}
-        className={`py-20 opacity-0 ${
-          featuresSection.isVisible ? "animate-slide-up-fade" : ""
-        }`}
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-12">
-            {features.map((feature) => (
-              <div key={feature.title} className="text-center space-y-4">
-                <div className="inline-flex p-4 rounded-2xl gradient-primary shadow-glow">
-                  <feature.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-muted/30">
