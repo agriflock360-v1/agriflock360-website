@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { ScrollToTopButton } from "./components/ScrollToTopButton";
 import Home from "./pages/Home";
 import Vaccination from "./pages/Vaccination";
 import Feeding from "./pages/Feeding";
@@ -51,6 +52,7 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
+          <ScrollToTopButton />
         </div>
       </BrowserRouter>
     </TooltipProvider>
