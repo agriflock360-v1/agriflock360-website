@@ -21,7 +21,7 @@ const Contact = () => {
     const subject = `Partnership Inquiry from ${formData.name}`;
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0ACompany: ${formData.company || "N/A"}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
     
-    window.location.href = `mailto:info@agriflock.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = `mailto:admin@agriflock360.com?subject=${encodeURIComponent(subject)}&body=${body}`;
     
     toast({
       title: "Opening email client",
@@ -124,10 +124,10 @@ const Contact = () => {
             <p>
               Or email us directly at{" "}
               <a
-                href="mailto:info@agriflock.com"
+                href="mailto:admin@agriflock360.com"
                 className="text-primary hover:underline"
               >
-                info@agriflock.com
+                admin@agriflock360.com
               </a>
             </p>
           </div>
