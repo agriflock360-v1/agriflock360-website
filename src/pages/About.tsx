@@ -172,6 +172,24 @@ const About = () => {
         </div>
       </section>
 
+      {/* Team Video */}
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden border-2 border-primary/20">
+              <video
+                className="w-full aspect-video"
+                controls
+                poster="/og-image.png"
+              >
+                <source src="/AgriFlock360 Video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section 
         ref={teamSection.ref}
@@ -188,20 +206,6 @@ const About = () => {
               A diverse group of technologists, agriculturalists, sustainable business leaders and entrepreneurs 
               passionate about transforming smallholder farming.
             </p>
-          </div>
-          
-          {/* Team Video */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <Card className="overflow-hidden border-2 border-primary/20">
-              <video
-                className="w-full aspect-video"
-                controls
-                poster="/og-image.png"
-              >
-                <source src="/AgriFlock360 Video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Card>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
