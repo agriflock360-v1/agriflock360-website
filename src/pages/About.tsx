@@ -269,7 +269,7 @@ const About = () => {
                   </a>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {engineeringTeam.map((engineer) => (
                     <div key={engineer.name} className="text-center space-y-2">
                       <div className="w-20 h-20 mx-auto rounded-full overflow-hidden bg-muted">
