@@ -19,6 +19,7 @@ import ComingSoon from "./pages/ComingSoon";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import SmsConsent from "./pages/SmsConsent";
 import ProcessLogo from "./pages/ProcessLogo";
 import NotFound from "./pages/NotFound";
 
@@ -47,6 +48,7 @@ const App = () => (
               <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-conditions" element={<TermsConditions />} />
+              <Route path="/sms-consent" element={<SmsConsent />} />
               <Route path="/process-logo" element={<ProcessLogo />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

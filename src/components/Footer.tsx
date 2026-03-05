@@ -66,6 +66,11 @@ export const Footer = () => {
                   Terms & Conditions
                 </Link>
               </li>
+              <li>
+                <Link to="/sms-consent" className="hover:text-primary transition-colors">
+                  SMS Consent
+                </Link>
+              </li>
             </ul>
           </div>
 
