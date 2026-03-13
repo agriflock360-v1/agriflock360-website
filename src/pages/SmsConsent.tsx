@@ -91,25 +91,15 @@ const SmsConsent = () => {
           <section>
             <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">6. Registration Screen Screenshots</h2>
             <p className="text-muted-foreground mb-4">
-              The screenshots below show the registration flow and the consent language presented to users in the AgriFlock 360 app.
+              The screenshot below shows the registration flow and the SMS consent language presented to users in the AgriFlock 360 app.
             </p>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-lg border border-border overflow-hidden bg-card">
-                <img
-                  src="/WhatsApp%20Image%202026-03-05%20at%2020.58.56.jpeg"
-                  alt="AgriFlock 360 create account screen with phone number field and consent checkbox"
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
-              </div>
-              <div className="rounded-lg border border-border overflow-hidden bg-card">
-                <img
-                  src="/WhatsApp%20Image%202026-03-05%20at%2019.54.35.jpeg"
-                  alt="AgriFlock 360 terms and conditions dialog including SMS alerts and account notifications language"
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
-              </div>
+            <div className="rounded-lg border border-border overflow-hidden bg-card max-w-md">
+              <img
+                src="/sms%20checkbox.jpeg"
+                alt="AgriFlock 360 create account screen showing the SMS alerts and account notifications consent checkbox"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </section>
 

@@ -4,7 +4,7 @@ const TermsConditions = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 max-w-4xl">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Terms & Conditions</h1>
         <p className="text-sm sm:text-base text-muted-foreground mb-8">
-          Last Updated: November 2025 | Effective Date: Immediately upon acceptance
+          Last Updated: March 2026 | Effective Date: Immediately upon acceptance
         </p>
 
         <div className="space-y-8 sm:space-y-10 text-sm sm:text-base">
@@ -175,7 +175,40 @@ const TermsConditions = () => {
           </section>
 
           <section>
-            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">14. Governing Law</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">14. SMS Program Terms</h2>
+            <p className="text-muted-foreground mb-3">
+              By opting in to SMS communications from AgriFlock 360, you agree to receive service-related text messages associated with your account, farm activity, devices, payments, subscriptions, and renewals.
+            </p>
+            <p className="text-muted-foreground mb-2">These SMS messages may include:</p>
+            <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-muted-foreground">
+              <li>Temperature, humidity, water level, and device connectivity alerts</li>
+              <li>Account notifications, payment reminders, subscription notices, and renewal updates</li>
+              <li>Customer care and support follow-up messages related to your use of the platform</li>
+            </ul>
+            <p className="text-muted-foreground mt-3">
+              Message frequency varies based on your farm activity, device status, and account status. Message and data rates may apply.
+            </p>
+            <p className="text-muted-foreground mt-3">
+              You can opt out of SMS messages at any time by replying <strong>STOP</strong>. For assistance, reply <strong>HELP</strong>.
+            </p>
+            <p className="text-muted-foreground mt-3">
+              SMS consent is not a condition of purchase, and consent applies only to AgriFlock 360 service communications requested or authorized by you.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">15. SMS Consent and Policy Links</h2>
+            <p className="text-muted-foreground mb-2">
+              Additional information about our SMS program and consent process is available at:
+            </p>
+            <ul className="list-disc pl-5 sm:pl-6 space-y-1 text-muted-foreground">
+              <li>SMS Consent: https://agriflock360.com/sms-consent</li>
+              <li>Privacy Policy: https://agriflock360.com/privacy-policy</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">16. Governing Law</h2>
             <p className="text-muted-foreground mb-2">
               These Terms are governed by the Laws of Kenya & the State of Delaware/Colorado, USA. Disputes will be resolved through:
             </p>
