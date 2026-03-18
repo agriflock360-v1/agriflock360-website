@@ -7,8 +7,7 @@ import qrIos from "@/assets/qr-ios.png";
 import appleIcon from "@/assets/apple-icon.svg";
 
 const Download = () => {
-  // Placeholder QR codes - these would be replaced with actual app store links
-  const playStoreUrl = "https://play.google.com/store";
+  const playStoreUrl = "https://play.google.com/store/apps/details?id=com.mglobal.agriflock";
   const appStoreUrl = "https://apps.apple.com";
 
   return (
