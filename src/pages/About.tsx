@@ -7,7 +7,6 @@ import teamPlaceholder from "@/assets/team-placeholder.jpg";
 import peterPhoto from "@/assets/peter-krahenbuhl.jpg";
 import abisaiPhoto from "@/assets/abisai-nandi.jpg";
 import jamesPhoto from "@/assets/james-obimbo.png";
-import sheenaPhoto from "@/assets/sheena-prasad.png";
 import mglobalLogo from "@/assets/mglobal-logo.jpg";
 import mititiPhoto from "@/assets/mititi-isaac.jpg";
 import mumbuaPhoto from "@/assets/mumbua-mutuku.jpeg";
@@ -37,11 +36,11 @@ const team = [
   //   bio: "AI & creative technology",
   // },
   {
-    name: "Sheena Prasad",
+    name: "Jacqueline Maganga",
     position: "Marketing Director",
-    image: sheenaPhoto,
-    linkedin: "https://www.linkedin.com/in/sheenaprasad/",
-    bio: "Creative marketer with 10+ years of experience growing mission-driven brands and digital platforms rooted in social and environmental impact.  Known for aligning mission with messaging, Sheena drives AgriFlock 360’s brand growth, digital engagement, and bridging farmer-focused communication with global platform visibility.",
+    image: "/Jacqueline Maganga - AgriFlock 360.png",
+    linkedin: "https://www.linkedin.com/in/jacqueline-maganga-05a04391/",
+    bio: "360 marketing leader with 10+ years of experience driving brand growth across digital, ATL, and BTL channels. Jacqueline has led high-impact multi-channel campaigns for brands including NCBA Bank, KFC, DTB, Nivea East Africa, Uber Eats, and Bamburi Cement, and brings strong expertise in acquisition strategy, team leadership, and data-driven campaign optimisation.",
   },
   {
     name: "James Obimbo",
