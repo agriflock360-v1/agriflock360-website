@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,10 +21,10 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import SmsConsent from "./pages/SmsConsent";
-import ProcessLogo from "./pages/ProcessLogo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+const ProcessLogo = lazy(() => import("./pages/ProcessLogo"));
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -40,23 +41,25 @@ const App = () => (
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-1">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/vaccination" element={<Vaccination />} />
-              <Route path="/feeding" element={<Feeding />} />
-              <Route path="/brooder" element={<Brooder />} />
-              <Route path="/analytics" element={<Analytics />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/download" element={<Download />} />
-              <Route path="/web-app" element={<WebApp />} />
-              <Route path="/coming-soon" element={<ComingSoon />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-conditions" element={<TermsConditions />} />
-              <Route path="/sms-consent" element={<SmsConsent />} />
-              <Route path="/process-logo" element={<ProcessLogo />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={<div className="min-h-screen" />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/vaccination" element={<Vaccination />} />
+                <Route path="/feeding" element={<Feeding />} />
+                <Route path="/brooder" element={<Brooder />} />
+                <Route path="/analytics" element={<Analytics />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/download" element={<Download />} />
+                <Route path="/web-app" element={<WebApp />} />
+                <Route path="/coming-soon" element={<ComingSoon />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-conditions" element={<TermsConditions />} />
+                <Route path="/sms-consent" element={<SmsConsent />} />
+                <Route path="/process-logo" element={<ProcessLogo />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
           </main>
           <Footer />
           <ScrollToTopButton />

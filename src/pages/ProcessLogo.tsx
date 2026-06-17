@@ -1,10 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Loader2 } from 'lucide-react';
-import { removeBackground, loadImageFromUrl } from '@/utils/removeBackground';
 import agriflockLogo from '@/assets/agriflock-logo-new.png';
 import { toast } from 'sonner';
+
+const loadImageFromUrl = (url: string): Promise<HTMLImageElement> => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = url;
+  });
+};
 
 export default function ProcessLogo() {
   const [processing, setProcessing] = useState(false);
@@ -16,6 +25,7 @@ export default function ProcessLogo() {
       toast.info('Loading AI model... This may take a moment.');
       
       const img = await loadImageFromUrl(agriflockLogo);
+      const { removeBackground } = await import('@/utils/removeBackground');
       
       toast.info('Processing image...');
       const blob = await removeBackground(img);

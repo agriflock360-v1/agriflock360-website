@@ -178,7 +178,7 @@ const Analytics = () => {
                 <Link to="/download">Get Started</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/about">Learn More</Link>
+                <Link to="/download">Learn More</Link>
               </Button>
             </div>
           </div>

@@ -302,8 +302,8 @@ const Brooder = () => {
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Experience 24/7 monitoring with 100% solar power
           </p>
-          <Button variant="accent" size="lg">
-            Get Your Smart Brooder
+          <Button variant="accent" size="lg" asChild>
+            <Link to="/download">Get Your Smart Brooder</Link>
           </Button>
         </div>
       </section>

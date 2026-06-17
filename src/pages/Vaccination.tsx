@@ -203,8 +203,8 @@ const Vaccination = () => {
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Start digitizing your vaccination records today
           </p>
-          <Button variant="accent" size="lg">
-            Get Started Now
+          <Button variant="accent" size="lg" asChild>
+            <Link to="/download">Get Started Now</Link>
           </Button>
         </div>
       </section>

@@ -234,8 +234,8 @@ const Feeding = () => {
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Start tracking your FCR and reducing feed costs today
           </p>
-          <Button variant="accent" size="lg">
-            Begin Optimization
+          <Button variant="accent" size="lg" asChild>
+            <Link to="/download">Begin Optimization</Link>
           </Button>
         </div>
       </section>

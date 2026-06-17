@@ -175,23 +175,22 @@ const Home = () => {
               transition: "transform 0.1s ease-out",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/30" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl space-y-8 animate-fade-in">
             <div className="inline-block">
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
+              <span className="px-4 py-2 rounded-full bg-background/85 text-primary text-sm font-semibold border border-primary/30 shadow-lg">
                 AI-Powered Poultry Management
               </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.85)]">
               Regenerative Poultry Farming{" "}
               <span className="text-gradient">With AI Precision</span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-2xl drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]">
               Transforming poultry operations with IoT-integrated smart solar brooders, AI analytics, integrated productivity tools and farm to fork blockchain traceability.
             </p>
 
@@ -202,7 +201,7 @@ const Home = () => {
                   Explore via Mobile App <ArrowRight className="ml-2" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" size="lg" asChild className="bg-background/85 shadow-lg">
                 <Link to="/coming-soon">
                   Explore via Web App <ArrowRight className="ml-2" />
                 </Link>
@@ -211,16 +210,16 @@ const Home = () => {
 
             <div className="grid grid-cols-3 gap-4 sm:flex sm:flex-wrap sm:gap-8 pt-8">
               <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-bold text-gradient">100+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Birds Capacity</div>
+                <div className="text-3xl sm:text-4xl font-bold text-gradient drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">100+</div>
+                <div className="text-xs sm:text-sm text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">Birds Capacity</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-bold text-gradient-accent">100%</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Solar Powered</div>
+                <div className="text-3xl sm:text-4xl font-bold text-gradient-accent drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">100%</div>
+                <div className="text-xs sm:text-sm text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">Solar Powered</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-bold text-gradient">24/7</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">IoT Monitoring</div>
+                <div className="text-3xl sm:text-4xl font-bold text-gradient drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">24/7</div>
+                <div className="text-xs sm:text-sm text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">IoT Monitoring</div>
               </div>
             </div>
           </div>
@@ -404,7 +403,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/*
+      Work In Progress gallery is hidden until patent protection is secured.
       <section id="gallery" className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 space-y-4">
@@ -456,6 +456,7 @@ const Home = () => {
           </p>
         </div>
       </section>
+      */}
 
       {/* Impact Section */}
       <section 
