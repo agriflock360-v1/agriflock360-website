@@ -35,13 +35,13 @@ const team = [
   //   linkedin: "",
   //   bio: "AI & creative technology",
   // },
-  // {
-  //   name: "Jacqueline Maganga",
-  //   position: "Marketing Director",
-  //   image: "/Jacqueline Maganga - AgriFlock 360.png",
-  //   linkedin: "https://www.linkedin.com/in/jacqueline-maganga-05a04391/",
-  //   bio: "With over a decade driving customer acquisition across fintech, FMCG, and digital strategy, including growth roles at Numida (YC W22) and high-profile campaigns for KFC, NCBA Bank, Uber Eats, and Nivea East Africa, Jacqueline brings the CAC management discipline and channel expertise that AgriFlock 360 needs to scale farmer onboarding and activate its buyer network. She is the bridge between AgriFlock 360’s technology and the smallholder farmers, agrovets, and offtakers it exists to serve.",
-  // },
+  {
+    name: "Jacqueline Maganga",
+    position: "Marketing Director",
+    image: "/Jacqueline Maganga - AgriFlock 360.png",
+    linkedin: "https://www.linkedin.com/in/jacqueline-maganga-05a04391/",
+    bio: "With over a decade driving customer acquisition across fintech, FMCG, and digital strategy, including growth roles at Numida (YC W22) and high-profile campaigns for KFC, NCBA Bank, Uber Eats, and Nivea East Africa, Jacqueline brings the CAC management discipline and channel expertise that AgriFlock 360 needs to scale farmer onboarding and activate its buyer network. She is the bridge between AgriFlock 360’s technology and the smallholder farmers, agrovets, and offtakers it exists to serve.",
+  },
   {
     name: "James Obimbo",
     position: "Partner & CFO",
