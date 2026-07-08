@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 const services = [
   {
     title: "Vaccination & Health Tracking",
-    description: "Reduce preventable chick mortality with digital vaccination schedules, alerts, & veterinary verification.",
+    description: "Reduce preventable chick mortality with digital vaccination schedules, alerts, and veterinary verification.",
     icon: Activity,
     href: "/vaccination",
     color: "text-primary",
