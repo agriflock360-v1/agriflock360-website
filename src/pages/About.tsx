@@ -78,6 +78,30 @@ const engineeringTeam = [
   },
 ];
 
+const boardAdvisors = [
+  {
+    name: "Andy Olek",
+    position: "Board Advisor, Legal & Corporate Strategy",
+    image: "/Andy Olek.jpeg",
+    linkedin: "https://www.linkedin.com/in/andyolek/",
+    bio: "25+ years as a startup and growth-stage attorney, including Chief Legal Officer roles. Andy advises AgriFlock 360 on fundraising, IP, governance, risk, compliance, and multi-country expansion.",
+  },
+  {
+    name: "Dr. Jon Moyle",
+    position: "Board Advisor, Poultry Science & Regulatory",
+    image: "/John Moyle.jpeg",
+    linkedin: "https://www.linkedin.com/in/jon-moyle-021a3a89/",
+    bio: "Extension Poultry Specialist at the University of Maryland with a Ph.D. in Poultry Science and 15 years in commercial poultry operations. Jon brings global poultry development experience across emerging markets, including hands-on advisory support at AgriFlock 360's Nairobi test site.",
+  },
+  {
+    name: "Babu S. Rahman",
+    position: "Board Advisor, Hardware & System Engineering",
+    image: "/Babu Rahmna.jpeg",
+    linkedin: "https://www.linkedin.com/in/babusrahman/",
+    bio: "Ph.D. in Mechanical Engineering from UC Berkeley with 25+ years of hardware engineering leadership, including a decade at Apple. Babu strengthens the Solar SmartBrooder's path from prototype to a reliable, manufacturable product.",
+  },
+];
+
 const values = [
   {
     icon: Target,
@@ -207,97 +231,158 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {team.map((member, index) => (
-              <Card
-                key={member.name}
-                className="overflow-hidden hover-lift border-2 hover:border-primary/50 transition-all"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <div className="flex justify-center pt-6 pb-4">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-muted">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                    />
-                  </div>
-                </div>
-                <div className="p-6 space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold">{member.name}</h3>
-                    <p className="text-primary font-medium">{member.position}</p>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="w-full justify-center"
-                    asChild
+          <div className="space-y-16">
+            <div className="space-y-6">
+              <div className="text-center space-y-2">
+                <h3 className="text-2xl md:text-3xl font-bold">Board of Advisors</h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Seasoned experts guiding AgriFlock 360 across legal strategy, poultry science,
+                  regulatory readiness, and hardware engineering.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {boardAdvisors.map((advisor, index) => (
+                  <Card
+                    key={advisor.name}
+                    className="overflow-hidden hover-lift border-2 hover:border-primary/50 transition-all"
+                    style={{ animationDelay: `${index * 50}ms` }}
                   >
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                      Connect on LinkedIn
-                    </a>
-                  </Button>
-                </div>
-              </Card>
-            ))}
-            
-            {/* Engineering Team Card */}
-            <Card
-              className="overflow-hidden hover-lift border-2 hover:border-primary/50 transition-all lg:col-span-2"
-              style={{ animationDelay: `${team.length * 50}ms` }}
-            >
-              <div className="p-6 space-y-6">
-                <div className="text-center space-y-3">
-                  <h3 className="text-2xl font-bold">Engineering Team</h3>
-                  <a
-                    href="https://mglobalbusinessconsultancy.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-lg"
-                  >
-                    M'Global Business Consultancy
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                </div>
-                
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  {engineeringTeam.map((engineer) => (
-                    <div key={engineer.name} className="text-center space-y-2">
-                      <div className="w-20 h-20 mx-auto rounded-full overflow-hidden bg-muted">
+                    <div className="flex justify-center pt-6 pb-4">
+                      <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-muted">
                         <img
-                          src={engineer.image}
-                          alt={engineer.name}
-                          className="w-full h-full object-cover"
+                          src={advisor.image}
+                          alt={advisor.name}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                         />
                       </div>
+                    </div>
+                    <div className="p-6 space-y-4">
                       <div>
-                        <p className="font-semibold text-sm">{engineer.name}</p>
-                        <p className="text-xs text-muted-foreground">{engineer.position}</p>
+                        <h4 className="text-xl font-bold">{advisor.name}</h4>
+                        <p className="text-primary font-medium">{advisor.position}</p>
                       </div>
-                      {engineer.linkedin && (
+                      <p className="text-sm text-muted-foreground">{advisor.bio}</p>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="w-full justify-center"
+                        asChild
+                      >
                         <a
-                          href={engineer.linkedin}
+                          href={advisor.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
-                          aria-label={`${engineer.name} LinkedIn`}
+                          className="flex items-center gap-2"
                         >
                           <Linkedin className="h-4 w-4" />
+                          Connect on LinkedIn
                         </a>
-                      )}
+                      </Button>
                     </div>
-                  ))}
-                </div>
+                  </Card>
+                ))}
               </div>
-            </Card>
+            </div>
+
+            <div className="space-y-6">
+              <div className="text-center space-y-2">
+                <h3 className="text-2xl md:text-3xl font-bold">Leadership Team</h3>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {team.map((member, index) => (
+                  <Card
+                    key={member.name}
+                    className="overflow-hidden hover-lift border-2 hover:border-primary/50 transition-all"
+                    style={{ animationDelay: `${(boardAdvisors.length + index) * 50}ms` }}
+                  >
+                    <div className="flex justify-center pt-6 pb-4">
+                      <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-muted">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                        />
+                      </div>
+                    </div>
+                    <div className="p-6 space-y-4">
+                      <div>
+                        <h4 className="text-xl font-bold">{member.name}</h4>
+                        <p className="text-primary font-medium">{member.position}</p>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{member.bio}</p>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="w-full justify-center"
+                        asChild
+                      >
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <Linkedin className="h-4 w-4" />
+                          Connect on LinkedIn
+                        </a>
+                      </Button>
+                    </div>
+                  </Card>
+                ))}
+                
+                {/* Engineering Team Card */}
+                <Card
+                  className="overflow-hidden hover-lift border-2 hover:border-primary/50 transition-all lg:col-span-2"
+                  style={{ animationDelay: `${(boardAdvisors.length + team.length) * 50}ms` }}
+                >
+                  <div className="p-6 space-y-6">
+                    <div className="text-center space-y-3">
+                      <h4 className="text-2xl font-bold">Engineering Team</h4>
+                      <a
+                        href="https://mglobalbusinessconsultancy.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium text-lg"
+                      >
+                        M'Global Business Consultancy
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                      {engineeringTeam.map((engineer) => (
+                        <div key={engineer.name} className="text-center space-y-2">
+                          <div className="w-20 h-20 mx-auto rounded-full overflow-hidden bg-muted">
+                            <img
+                              src={engineer.image}
+                              alt={engineer.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-sm">{engineer.name}</p>
+                            <p className="text-xs text-muted-foreground">{engineer.position}</p>
+                          </div>
+                          {engineer.linkedin && (
+                            <a
+                              href={engineer.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center justify-center text-primary hover:text-primary/80 transition-colors"
+                              aria-label={`${engineer.name} LinkedIn`}
+                            >
+                              <Linkedin className="h-4 w-4" />
+                            </a>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
