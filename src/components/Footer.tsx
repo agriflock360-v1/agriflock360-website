@@ -30,11 +30,13 @@ export const Footer = () => {
                   Precision Feeding
                 </Link>
               </li>
+              {/* Temporarily disabled while brooder patent is being processed
               <li>
                 <Link to="/brooder" className="hover:text-primary transition-colors">
                   Smart Brooder
                 </Link>
               </li>
+              */}
             </ul>
           </div>
 

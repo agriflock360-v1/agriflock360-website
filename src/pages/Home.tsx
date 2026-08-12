@@ -27,6 +27,7 @@ const services = [
     color: "text-accent",
     available: true,
   },
+  /* Temporarily disabled while brooder patent is being processed
   {
     title: "Solar Smart Brooder IoT",
     description: "Monitor temperature, humidity, and power in real-time with solar-powered IoT integration.",
@@ -35,6 +36,7 @@ const services = [
     color: "text-primary-glow",
     available: true,
   },
+  */
   {
     title: "AI Analytics & Record Keeping",
     description: "Automated farm insights and performance data with intelligent record management and analytics.",

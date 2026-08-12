@@ -11,7 +11,7 @@ import { ScrollToTopButton } from "./components/ScrollToTopButton";
 import Home from "./pages/Home";
 import Vaccination from "./pages/Vaccination";
 import Feeding from "./pages/Feeding";
-import Brooder from "./pages/Brooder";
+// import Brooder from "./pages/Brooder"; // Temporarily disabled while brooder patent is being processed
 import Analytics from "./pages/Analytics";
 import About from "./pages/About";
 import Download from "./pages/Download";
@@ -46,7 +46,7 @@ const App = () => (
                 <Route path="/" element={<Home />} />
                 <Route path="/vaccination" element={<Vaccination />} />
                 <Route path="/feeding" element={<Feeding />} />
-                <Route path="/brooder" element={<Brooder />} />
+                {/* <Route path="/brooder" element={<Brooder />} /> */}
                 <Route path="/analytics" element={<Analytics />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

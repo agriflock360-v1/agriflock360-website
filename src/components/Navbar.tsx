@@ -29,12 +29,14 @@ const services = [
     icon: Sprout,
     available: true,
   },
+  /* Temporarily disabled while brooder patent is being processed
   {
     name: "Solar Smart Brooder IoT",
     href: "/brooder",
     icon: Zap,
     available: true,
   },
+  */
   {
     name: "AI Analytics & Record Keeping",
     href: "/analytics",
