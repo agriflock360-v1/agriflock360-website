@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import { Button } from "./ui/button";
+import { useLocation } from "react-router-dom";
 
 export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -17,13 +19,13 @@ export function ScrollToTopButton() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
     });
   };
 
   return (
     <Button
-      variant="hero"
+      variant={["/", "/about"].includes(pathname) ? "gold" : "hero"}
       size="icon"
       onClick={scrollToTop}
       className={`fixed bottom-6 right-6 z-40 h-12 w-12 rounded-full shadow-lg transition-all duration-300 md:hidden ${

@@ -1,118 +1,107 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Check, ChevronDown, ExternalLink, Gift, Mail, Phone, QrCode, Smartphone, Stethoscope, Tractor } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Smartphone } from "lucide-react";
+import { pricingTerms } from "@/data/pricing";
 import googlePlayIcon from "@/assets/google-play.png";
-import qrAndroid from "@/assets/qr-android.png";
-import qrIos from "@/assets/qr-ios.png";
 import appleIcon from "@/assets/apple-icon.svg";
+import qrAndroid from "@/assets/google-play-qr.svg";
+import qrIos from "@/assets/testflight-qr.svg";
+import chooseRole from "@/assets/app-features/choose-role.jpeg";
+import "./Download.css";
+
+const playStoreUrl = "https://play.google.com/store/apps/details?id=com.mglobal.agriflock";
+const testFlightUrl = "https://testflight.apple.com/join/QdMNfNtS";
+
+const farmerSteps = [
+  ["Choose Farmer", "Select the Farmer module when you create your account."],
+  ["Pick your plan", `Choose a plan for your flock size and start your ${pricingTerms.trialDays}-day free trial.`],
+  ["Set up your farm", "Add your farm and flock details, then start recording your daily work."],
+];
+const officerSteps = [
+  ["Choose the vet module", "Select Veterinarian (Extension officer) during signup."],
+  ["Accept the terms", "Read and accept the Terms & Conditions and Code of Conduct."],
+  ["Submit your application", "Provide your personal and professional details, and upload your qualification documents."],
+  ["Wait for approval", "Your application must be reviewed and approved before you can provide services."],
+];
+const downloadFaqs = [
+  ["Do farmers and extension officers use the same app?", "Yes. Download AgriFlock 360, then choose Farmer or Veterinarian (Extension officer) during signup. Each role has its own module within the app."],
+  ["How do I install on an iPhone or iPad?", "Use the Join on TestFlight button above. Install Apple’s TestFlight app if prompted, open the AgriFlock 360 invitation on your device, then accept the invitation and install the beta app."],
+  ["How do I use a download QR code?", "Open your phone’s camera, point it at the code and tap the link that appears. The Android code opens Google Play; the iPhone and iPad code opens the TestFlight invitation. If you are already on your phone, use the download button instead."],
+  ["Can I start providing services as soon as I sign up?", "Vets and extension officers must accept the terms, submit their details and qualification documents, and wait for approval before offering services."],
+];
+
+function DownloadQR({ image, platform }: { image: string; platform: string }) {
+  return <details className="download-qr">
+    <summary><QrCode size={17} aria-hidden="true" /><span>Scan with your phone</span><ChevronDown size={16} aria-hidden="true" /></summary>
+    <figure><img src={image} alt={`QR code to open AgriFlock 360 on ${platform}`} width={200} height={200} /><figcaption>Open your phone’s camera and scan to continue on {platform}.</figcaption></figure>
+  </details>;
+}
 
 const Download = () => {
-  const playStoreUrl = "https://play.google.com/store/apps/details?id=com.mglobal.agriflock";
-  const appStoreUrl = "https://apps.apple.com";
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = "Download the App | AgriFlock 360";
+    return () => { document.title = previousTitle; };
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 pt-20">
-      <div className="container mx-auto px-4 py-8 sm:py-12">
-        <div className="max-w-4xl mx-auto text-center mb-6 sm:mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full gradient-hero mb-3 sm:mb-4">
-            <Smartphone className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+    <div className="download-page">
+      <header className="download-hero download-container">
+        <div className="download-hero__copy">
+          <p className="download-eyebrow">The AgriFlock 360 mobile app</p>
+          <h1>Your farm.<br />Your expertise.<br /><span>One app.</span></h1>
+          <p className="download-hero__intro">Manage your flock or bring professional support to farmers. Download AgriFlock 360 and choose the role that fits your work.</p>
+          <div className="download-stores" id="download-options" tabIndex={-1} aria-label="App download options">
+            <section className="download-store" aria-labelledby="android-heading">
+              <div className="download-store__heading"><span className="download-store__icon"><img src={googlePlayIcon} alt="" width={26} height={26} /></span><div><h2 id="android-heading">Android</h2><p>Google Play</p></div></div>
+              <p className="download-store__description">Install the app directly from Google Play.</p>
+              <Button variant="gold" asChild><a href={playStoreUrl} target="_blank" rel="noopener noreferrer">Get it on Google Play<ExternalLink size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a></Button>
+              <DownloadQR image={qrAndroid} platform="Google Play" />
+            </section>
+            <section className="download-store" aria-labelledby="ios-heading">
+              <div className="download-store__heading"><span className="download-store__icon"><img src={appleIcon} alt="" width={26} height={26} /></span><div><h2 id="ios-heading">iPhone & iPad</h2><p>TestFlight beta</p></div></div>
+              <p className="download-store__description">Install TestFlight, then join the AgriFlock 360 beta.</p>
+              <Button variant="gold" asChild><a href={testFlightUrl} target="_blank" rel="noopener noreferrer">Join on TestFlight<ExternalLink size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a></Button>
+              <DownloadQR image={qrIos} platform="TestFlight" />
+            </section>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-gradient px-4">
-            Download AgriFlock 360 Mobile App
-          </h1>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-            Take your poultry farm management to the next level. Download our mobile app and manage your operations on the go.
-          </p>
+          <div className="download-trial"><Gift size={21} strokeWidth={1.5} aria-hidden="true" /><p>Farmer plans include a <strong>{pricingTerms.trialDays}-day free trial.</strong> <Link to="/pricing#farmer-plans">View plans<ArrowRight size={15} aria-hidden="true" /></Link></p></div>
         </div>
+        <figure className="download-preview">
+          <div className="download-preview__heading"><span />One download. Two ways to grow.</div>
+          <div className="download-preview__phone"><img src={chooseRole} alt="AgriFlock 360 signup screen offering Farmer and Veterinarian (Extension officer) roles" width={590} height={1280} fetchPriority="high" /></div>
+          <figcaption><Smartphone size={18} aria-hidden="true" /><span>Choose your role when you sign up.<br /><strong>Both modules are in the same app.</strong></span></figcaption>
+        </figure>
+      </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto mb-6 sm:mb-8">
-          {/* Google Play Store */}
-          <Card className="p-4 sm:p-6 hover-lift border-2 border-primary/20 bg-card/50 backdrop-blur">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4">
-                <img src={googlePlayIcon} alt="Google Play Store" className="w-16 h-16 sm:w-20 sm:h-20" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Android</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">Download from Google Play Store</p>
-              
-              {/* QR Code */}
-              <div className="bg-white p-2 sm:p-3 rounded-lg inline-block mb-3 sm:mb-4">
-                <img src={qrAndroid} alt="Android QR Code" className="w-28 h-28 sm:w-36 sm:h-36" />
-                <p className="text-xs text-gray-500 mt-1 sm:mt-2">Scan to download</p>
-              </div>
-
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="w-full"
-                onClick={() => window.open(playStoreUrl, '_blank')}
-              >
-                <img src={googlePlayIcon} alt="Google Play" className="w-5 h-5 mr-2" />
-                Get it on Google Play
-              </Button>
-            </div>
-          </Card>
-
-          {/* Apple App Store */}
-          <Card className="p-4 sm:p-6 hover-lift border-2 border-accent/20 bg-card/50 backdrop-blur">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4">
-                <img src={appleIcon} alt="Apple App Store" className="w-16 h-16 sm:w-20 sm:h-20" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">iOS</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">Download from App Store</p>
-              
-              {/* QR Code */}
-              <div className="bg-white p-2 sm:p-3 rounded-lg inline-block mb-3 sm:mb-4">
-                <img src={qrIos} alt="iOS QR Code" className="w-28 h-28 sm:w-36 sm:h-36" />
-                <p className="text-xs text-gray-500 mt-1 sm:mt-2">Scan to download</p>
-              </div>
-
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="w-full"
-                onClick={() => window.open(appStoreUrl, '_blank')}
-              >
-                <img src={appleIcon} alt="Apple" className="w-5 h-5 mr-2" />
-                Download on the App Store
-              </Button>
-            </div>
-          </Card>
-        </div>
-
-        {/* Additional Info */}
-        <Card className="max-w-3xl mx-auto p-4 sm:p-6 bg-card/50 backdrop-blur border-2 border-primary/20">
-          <h3 className="text-2xl font-bold mb-4 text-center">Why Download AgriFlock 360 Mobile App?</h3>
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                <Smartphone className="w-6 h-6 text-primary" />
-              </div>
-              <h4 className="font-semibold mb-2">Manage On-the-Go</h4>
-              <p className="text-sm text-muted-foreground">Access your farm data anywhere, anytime</p>
-            </div>
-            <div>
-              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                </svg>
-              </div>
-              <h4 className="font-semibold mb-2">Real-Time Alerts</h4>
-              <p className="text-sm text-muted-foreground">Get instant notifications for critical events</p>
-            </div>
-            <div>
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold mb-2">Offline Support</h4>
-              <p className="text-sm text-muted-foreground">Work seamlessly even without internet</p>
-            </div>
+      <section id="choose-your-role" className="download-roles" aria-labelledby="download-roles-heading" tabIndex={-1}>
+        <div className="download-container">
+          <div className="download-section-heading"><div><p className="download-eyebrow">After installing</p><h2 id="download-roles-heading">Start with your role.</h2></div><p>Choose the module that matches what you do. Here’s what happens next.</p></div>
+          <div className="download-roles__grid">
+            <article className="download-role download-role--farmer" aria-labelledby="download-farmer-heading">
+              <div className="download-role__heading"><span><Tractor size={26} strokeWidth={1.5} aria-hidden="true" /></span><div><p>For poultry farmers</p><h3 id="download-farmer-heading">Manage your farm.</h3></div></div>
+              <p className="download-role__intro">Keep feeding, vaccinations, records and planning together as your flock grows.</p>
+              <ol>{farmerSteps.map(([title, description], i) => <li key={title}><span aria-hidden="true">0{i + 1}</span><div><h4>{title}</h4><p>{description}</p></div></li>)}</ol>
+              <div className="download-role__note"><Check size={18} aria-hidden="true" /><p>All farmer plans include vaccination tracking, feeding guidance, marketplace access and quotations.</p></div>
+              <Link className="download-text-link" to="/pricing#farmer-plans">Compare farmer plans<ArrowRight size={18} aria-hidden="true" /></Link>
+            </article>
+            <article className="download-role download-role--officer" aria-labelledby="download-officer-heading">
+              <div className="download-role__heading"><span><Stethoscope size={26} strokeWidth={1.5} aria-hidden="true" /></span><div><p>For vets & extension officers</p><h3 id="download-officer-heading">Put your expertise to work.</h3></div></div>
+              <p className="download-role__intro">Apply to offer consultations and professional services to poultry farmers.</p>
+              <ol>{officerSteps.map(([title, description], i) => <li key={title}><span aria-hidden="true">0{i + 1}</span><div><h4>{title}</h4><p>{description}</p></div></li>)}</ol>
+              <Link className="download-text-link" to="/pricing#extension-officers">View service rates & earnings<ArrowRight size={18} aria-hidden="true" /></Link>
+            </article>
           </div>
-        </Card>
-      </div>
+        </div>
+      </section>
+
+      <section className="download-faq download-container" aria-labelledby="download-faq-heading">
+        <div><p className="download-eyebrow">Getting started, made clear</p><h2 id="download-faq-heading">A little help<br />before you begin.</h2><p>Explore the tools inside AgriFlock 360 before setting up your account.</p><Link className="download-text-link" to="/features">Explore app features<ArrowRight size={18} aria-hidden="true" /></Link></div>
+        <div>{downloadFaqs.map(([question, answer]) => <details key={question}><summary>{question}<ChevronDown size={18} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div>
+      </section>
+
+      <section className="download-help" aria-labelledby="download-help-heading"><div className="download-container"><div><p className="download-eyebrow">We’re here to help</p><h2 id="download-help-heading">Need a hand getting started?</h2><p>Our team can help with installation, choosing your module and the next steps.</p><div className="download-help__contacts"><a href="mailto:support@agriflock360.com"><Mail size={17} aria-hidden="true" /><span>support@agriflock360.com</span></a><a href="tel:+254729554434"><Phone size={17} aria-hidden="true" /><span>+254 729 554 434</span></a></div></div><Button variant="gold" size="lg" asChild><Link to="/contact">Contact the Team<ArrowRight size={18} aria-hidden="true" /></Link></Button></div></section>
     </div>
   );
 };

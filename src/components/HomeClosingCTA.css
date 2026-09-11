@@ -1,0 +1,125 @@
+.home-closing {
+  background: hsl(var(--brand-green));
+  scroll-margin-top: 88px;
+}
+
+.home-closing__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  padding: clamp(32px, 4.4vw, 64px) max(clamp(24px, 4.2vw, 68px), calc((100% - 1320px) / 2));
+  background: hsl(var(--brand-green));
+  color: hsl(var(--brand-white));
+}
+
+.home-closing__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.home-closing__eyebrow svg {
+  flex-shrink: 0;
+  color: hsl(var(--brand-gold));
+}
+
+.home-closing h2 {
+  font-size: clamp(36px, 3.7vw, 54px);
+  font-weight: 550;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.home-closing h2 span {
+  color: hsl(var(--brand-gold));
+}
+
+.home-closing__description {
+  max-width: 520px;
+  margin-top: 24px;
+  color: hsl(var(--brand-light-grey));
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.home-closing__actions {
+  width: 100%;
+  max-width: 340px;
+  justify-self: end;
+}
+
+.home-closing__actions > a {
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  height: auto;
+  min-height: 54px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.home-closing__actions > a > span {
+  flex: 1;
+  text-align: left;
+}
+
+.home-closing__actions > a:focus-visible {
+  outline: 2px solid hsl(var(--brand-white));
+  outline-offset: 5px;
+}
+
+.home-closing__platforms {
+  margin: 12px 0 26px;
+  color: hsl(var(--brand-light-grey));
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .home-closing__panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .home-closing__actions {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 540px) {
+  .home-closing__panel {
+    padding: 32px 24px;
+  }
+
+  .home-closing__eyebrow {
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .home-closing h2 {
+    font-size: clamp(30px, 7.2vw, 40px);
+  }
+
+  .home-closing__description {
+    font-size: 15px;
+  }
+
+  .home-closing__actions {
+    max-width: none;
+  }
+
+  .home-closing__actions > a {
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+}
