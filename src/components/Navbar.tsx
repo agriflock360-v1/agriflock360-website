@@ -1,258 +1,105 @@
 import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Menu, Monitor, Smartphone, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Menu, X, ChevronDown, Activity, Sprout, Zap, BarChart3, AlertTriangle, TrendingUp, ShoppingBag, GitBranch, GraduationCap, Smartphone, Monitor } from "lucide-react";
-import { useState, useEffect } from "react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { appSolutions, upcomingSolutions } from "@/data/solutions";
 import agriflockLogo from "@/assets/agriflock-logo-new.png";
+import "./Navbar.css";
 
-const navigation = [
+const leadingLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  { name: "Features", href: "/features" },
 ];
-
-const services = [
-  {
-    name: "Vaccination & Health Tracking",
-    href: "/vaccination",
-    icon: Activity,
-    available: true,
-  },
-  {
-    name: "Precision Feeding Analytics",
-    href: "/feeding",
-    icon: Sprout,
-    available: true,
-  },
-  /* Temporarily disabled while brooder patent is being processed
-  {
-    name: "Solar Smart Brooder IoT",
-    href: "/brooder",
-    icon: Zap,
-    available: true,
-  },
-  */
-  {
-    name: "AI Analytics & Record Keeping",
-    href: "/analytics",
-    icon: BarChart3,
-    available: true,
-  },
-  {
-    name: "Real-Time Disease Detection",
-    icon: AlertTriangle,
-    available: false,
-  },
-  {
-    name: "Production Forecasting & Quotations",
-    icon: TrendingUp,
-    available: false,
-  },
-  {
-    name: "Direct Market Linkages",
-    icon: ShoppingBag,
-    available: false,
-  },
-  {
-    name: "Blockchain Traceability",
-    icon: GitBranch,
-    available: false,
-  },
-  {
-    name: "E-Extension Services",
-    icon: GraduationCap,
-    available: false,
-  },
+const trailingLinks = [
+  { name: "Pricing", href: "/pricing" },
+  { name: "Contact", href: "/contact" },
+];
+const startLinks = [
+  { name: "Explore via Mobile App", href: "/download", icon: Smartphone },
+  { name: "Launch Web App", href: "/coming-soon", icon: Monitor },
+  { name: "Learn About Web App", href: "/web-app", icon: Monitor },
 ];
 
 export const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
 
+  useEffect(() => { setMobileMenuOpen(false); }, [location.key]);
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const desktop = window.matchMedia("(min-width: 1200px)");
+    const closeOnDesktop = () => { if (desktop.matches) setMobileMenuOpen(false); };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
+  const navLink = ({ name, href }: typeof leadingLinks[number]) => (
+    <Link key={href} to={href} className={`site-nav__link${location.pathname === href ? " is-active" : ""}`}
+      aria-current={location.pathname === href ? "page" : undefined} onClick={() => setMobileMenuOpen(false)}>{name}</Link>
+  );
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-lg" 
-        : "bg-background/80 backdrop-blur-lg border-b border-transparent"
-    }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-3 shrink-0">
-            <img src={agriflockLogo} alt="AgriFlock 360 Logo" className="w-16 h-16 rounded-lg object-contain" />
-            <span className="text-lg sm:text-xl font-bold text-gradient whitespace-nowrap">AgriFlock 360</span>
+    <nav className="site-nav" aria-label="Primary navigation" onKeyDown={(event) => {
+      if (event.key === "Escape" && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+        menuButton.current?.focus();
+      }
+    }}>
+      <div className="site-nav__inner">
+        <div className="site-nav__bar">
+          <Link to="/" className="site-nav__brand" aria-label="AgriFlock 360 home">
+            <img src={agriflockLogo} alt="" width={56} height={64} /><span>AgriFlock 360</span>
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`px-4 py-2 rounded-lg transition-all duration-200 ${
-                  location.pathname === item.href
-                    ? "bg-primary/10 text-primary font-medium"
-                    : "text-foreground hover:bg-muted"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            
+          <div className="site-nav__desktop">
+            {leadingLinks.map(navLink)}
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="px-4 py-2">
-                  Our Products & Services
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-64 bg-background border-border z-50">
-                {services.map((service) => (
-                  service.available ? (
-                    <DropdownMenuItem key={service.name} asChild>
-                      <Link to={service.href!} className="flex items-center gap-3 cursor-pointer">
-                        <service.icon className="h-4 w-4 text-primary" />
-                        <span>{service.name}</span>
-                      </Link>
-                    </DropdownMenuItem>
-                  ) : (
-                    <DropdownMenuItem key={service.name} disabled className="flex items-center gap-3 opacity-60">
-                      <service.icon className="h-4 w-4" />
-                      <span className="flex-1">{service.name}</span>
-                    </DropdownMenuItem>
-                  )
+              <DropdownMenuTrigger className="site-nav__link">Our Products &amp; Services<ChevronDown size={14} aria-hidden="true" /></DropdownMenuTrigger>
+              <DropdownMenuContent align="center" collisionPadding={12} className="site-nav__dropdown">
+                {appSolutions.map(({ id, title, icon: Icon }) => (
+                  <DropdownMenuItem key={id} asChild><Link to={`/features#${id}`}><Icon aria-hidden="true" size={18} /><span>{title}</span></Link></DropdownMenuItem>
+                ))}
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel>In development</DropdownMenuLabel>
+                {upcomingSolutions.map(({ title, icon: Icon }) => (
+                  <DropdownMenuItem key={title} disabled><Icon size={18} aria-hidden="true" /><span>{title}</span></DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            
+            {trailingLinks.map(navLink)}
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="hero" size="sm" className="ml-4">
-                  Get Started
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 bg-background border-border z-50">
-                <DropdownMenuItem asChild>
-                  <Link to="/download" className="flex items-center gap-3 cursor-pointer">
-                    <Smartphone className="h-4 w-4 text-primary" />
-                    <span>Explore via Mobile App</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/coming-soon" className="flex items-center gap-3 cursor-pointer">
-                    <Monitor className="h-4 w-4 text-primary" />
-                    <span>Launch Web App</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/web-app" className="flex items-center gap-3 cursor-pointer">
-                    <Monitor className="h-4 w-4 text-accent" />
-                    <span>Learn About Web App</span>
-                  </Link>
-                </DropdownMenuItem>
+              <DropdownMenuTrigger asChild><Button variant="gold" className="site-nav__start">Get Started<ChevronDown size={14} aria-hidden="true" /></Button></DropdownMenuTrigger>
+              <DropdownMenuContent align="end" collisionPadding={12} className="site-nav__dropdown">
+                {startLinks.map(({ name, href, icon: Icon }) => (
+                  <DropdownMenuItem key={href} asChild><Link to={href}><Icon size={18} aria-hidden="true" /><span>{name}</span></Link></DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+          <button ref={menuButton} className="site-nav__toggle button-gold" aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation" aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"}
+            onClick={() => setMobileMenuOpen((open) => !open)}>
+            {mobileMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>
         </div>
-
-        {/* Mobile Navigation */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? "max-h-[80vh] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
-        }`}>
-          <div className="space-y-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`block px-4 py-3 rounded-lg transition-all duration-200 ${
-                  location.pathname === item.href
-                    ? "bg-primary/10 text-primary font-medium"
-                    : "text-foreground hover:bg-muted"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
+        <div id="mobile-navigation" className="site-nav__mobile" hidden={!mobileMenuOpen}>
+          {leadingLinks.map(navLink)}
+          <details className="site-nav__mobile-group">
+            <summary>Our Products &amp; Services<ChevronDown size={16} aria-hidden="true" /></summary>
+            {appSolutions.map(({ id, title, icon: Icon }) => (
+              <Link key={id} to={`/features#${id}`} onClick={() => setMobileMenuOpen(false)}><Icon size={18} aria-hidden="true" /><span>{title}</span></Link>
             ))}
-            
-            <div className="px-4 py-2">
-              <p className="text-sm font-semibold text-muted-foreground mb-2">Our Products & Services</p>
-              <div className="space-y-1">
-                {services.map((service) => (
-                  service.available ? (
-                    <Link
-                      key={service.name}
-                      to={service.href!}
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-foreground hover:bg-muted transition-all duration-200"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <service.icon className="h-4 w-4 text-primary" />
-                      <span className="text-sm">{service.name}</span>
-                    </Link>
-                  ) : (
-                    <div
-                      key={service.name}
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg opacity-60"
-                    >
-                      <service.icon className="h-4 w-4" />
-                      <span className="text-sm flex-1">{service.name}</span>
-                    </div>
-                  )
-                ))}
-              </div>
-            </div>
-            
-            <div className="px-4 pt-4 space-y-2">
-              <Button variant="hero" size="sm" className="w-full" asChild>
-                <Link to="/download">
-                  <Smartphone className="mr-2 h-4 w-4" />
-                  Explore via Mobile App
-                </Link>
-              </Button>
-              <Button variant="outline" size="sm" className="w-full" asChild>
-                <Link to="/coming-soon">
-                  <Monitor className="mr-2 h-4 w-4" />
-                  Launch Web App
-                </Link>
-              </Button>
-              <Button variant="ghost" size="sm" className="w-full" asChild>
-                <Link to="/web-app">
-                  Learn About Web App
-                </Link>
-              </Button>
-            </div>
-          </div>
+            <p>In development</p>
+            {upcomingSolutions.map(({ title }) => <span className="site-nav__upcoming" key={title}>{title}</span>)}
+          </details>
+          {trailingLinks.map(navLink)}
+          <details className="site-nav__mobile-group site-nav__mobile-start">
+            <summary className="button-gold">Get Started<ChevronDown size={16} aria-hidden="true" /></summary>
+            {startLinks.map(({ name, href, icon: Icon }) => (
+              <Link key={href} to={href} onClick={() => setMobileMenuOpen(false)}><Icon size={18} aria-hidden="true" /><span>{name}</span></Link>
+            ))}
+          </details>
         </div>
       </div>
     </nav>

@@ -1,140 +1,104 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
 import agriflockLogo from "@/assets/agriflock-logo-new.png";
+import "./Footer.css";
 
-export const Footer = () => {
-  return (
-    <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          <div className="space-y-4 text-center sm:text-left">
-            <div className="flex items-center space-x-3 justify-center sm:justify-start">
-              <img src={agriflockLogo} alt="AgriFlock 360 Logo" className="w-14 h-14 rounded-lg object-contain" />
-              <span className="text-xl font-bold">AgriFlock 360</span>
-            </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Digitizing smallholder poultry farming through AI-powered IoT solutions.
-            </p>
-          </div>
+const serviceLinks = [
+  { label: "Explore App Features", href: "/features" },
+  { label: "Vaccination & Health", href: "/vaccination" },
+  { label: "Precision Feeding", href: "/feeding" },
+  { label: "Farm Records & Reports", href: "/features#farm-reports" },
+  // The brooder remains hidden while its patent is being processed.
+];
 
-          <div className="text-center sm:text-left">
-            <h3 className="font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/vaccination" className="hover:text-primary transition-colors">
-                  Vaccination & Health
-                </Link>
-              </li>
-              <li>
-                <Link to="/feeding" className="hover:text-primary transition-colors">
-                  Precision Feeding
-                </Link>
-              </li>
-              {/* Temporarily disabled while brooder patent is being processed
-              <li>
-                <Link to="/brooder" className="hover:text-primary transition-colors">
-                  Smart Brooder
-                </Link>
-              </li>
-              */}
-            </ul>
-          </div>
+const companyLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Mobile App", href: "/download" },
+  { label: "Web App Overview", href: "/web-app" },
+  { label: "Contact Us", href: "/contact" },
+];
 
-          <div className="text-center sm:text-left">
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/about" className="hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/web-app" className="hover:text-primary transition-colors">
-                  Web App
-                </Link>
-              </li>
-              <li>
-                <Link to="/download" className="hover:text-primary transition-colors">
-                  Mobile App
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy-policy" className="hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms-conditions" className="hover:text-primary transition-colors">
-                  Terms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link to="/sms-consent" className="hover:text-primary transition-colors">
-                  SMS Consent
-                </Link>
-              </li>
-            </ul>
-          </div>
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-conditions" },
+  { label: "SMS Consent", href: "/sms-consent" },
+];
 
-          <div className="text-center sm:text-left">
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm mb-6">
-              <li className="flex items-center space-x-2 justify-center sm:justify-start">
-                <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:support@agriflock360.com" className="hover:text-primary transition-colors">
-                  support@agriflock360.com
-                </a>
-              </li>
-              <li className="flex items-center space-x-2 justify-center sm:justify-start">
-                <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:+254729554434" className="hover:text-primary transition-colors">
-                  Kenya Contact: +254 729 554 434
-                </a>
-              </li>
-              <li className="flex items-center space-x-2 justify-center sm:justify-start">
-                <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:+16674469432" className="hover:text-primary transition-colors">
-                  US Contact: +1 667 446 9432
-                </a>
-              </li>
-            </ul>
-            <div className="flex items-center gap-4 justify-center sm:justify-start">
-              <a href="https://www.linkedin.com/company/agriflock-360" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="https://web.facebook.com/profile.php?id=61584028213600" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://www.instagram.com/agriflock_360?igsh=a3NuY25heXh5MDRj&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="https://x.com/agriflock360" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors" aria-label="X (Twitter)">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="https://www.tiktok.com/@agriflock_360?_r=1&_t=ZM-91tX5lPYKMq" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors" aria-label="TikTok">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                </svg>
-              </a>
-            </div>
+export const Footer = () => (
+  <footer id="site-footer" className="site-footer">
+    <div className="site-footer__inner">
+      <div className="site-footer__main">
+        <div className="site-footer__identity">
+          <Link to="/" className="site-footer__brand" aria-label="AgriFlock 360 home">
+            <img src={agriflockLogo} alt="" width={64} height={72} className="site-footer__logo" />
+            <span>AgriFlock 360</span>
+          </Link>
+          <p className="site-footer__description">Digitizing smallholder poultry farming through AI-powered IoT solutions.</p>
+          <div className="site-footer__socials">
+            <a href="https://www.linkedin.com/company/agriflock-360" target="_blank" rel="noopener noreferrer" className="button-gold site-footer__social-link" aria-label="LinkedIn">
+              <Linkedin className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <a href="https://web.facebook.com/profile.php?id=61584028213600" target="_blank" rel="noopener noreferrer" className="button-gold site-footer__social-link" aria-label="Facebook">
+              <Facebook className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <a href="https://www.instagram.com/agriflock_360?igsh=a3NuY25heXh5MDRj&utm_source=qr" target="_blank" rel="noopener noreferrer" className="button-gold site-footer__social-link" aria-label="Instagram">
+              <Instagram className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <a href="https://x.com/agriflock360" target="_blank" rel="noopener noreferrer" className="button-gold site-footer__social-link" aria-label="X (Twitter)">
+              <Twitter className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <a href="https://www.tiktok.com/@agriflock_360?_r=1&_t=ZM-91tX5lPYKMq" target="_blank" rel="noopener noreferrer" className="button-gold site-footer__social-link" aria-label="TikTok">
+              <svg className="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+              </svg>
+            </a>
           </div>
         </div>
 
-        <div className="border-t border-border mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-muted-foreground space-y-2">
-          <p>&copy; {new Date().getFullYear()} AgriFlock 360. All rights reserved.</p>
-          <p>
-            Developed by{" "}
-            <a 
-              href="https://mglobalbusinessconsultancy.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 transition-colors font-medium"
-            >
-              M'Global Business Consultancy
-            </a>
-          </p>
+        <nav className="site-footer__navigation" aria-labelledby="footer-services-heading">
+          <h2 id="footer-services-heading">Solutions & Services</h2>
+          <ul className="site-footer__links">
+            {serviceLinks.map(({ label, href }) => <li key={href}><Link to={href}>{label}</Link></li>)}
+          </ul>
+        </nav>
+
+        <nav className="site-footer__navigation" aria-labelledby="footer-company-heading">
+          <h2 id="footer-company-heading">Company</h2>
+          <ul className="site-footer__links">
+            {companyLinks.map(({ label, href }) => <li key={href}><Link to={href}>{label}</Link></li>)}
+          </ul>
+        </nav>
+
+        <div className="site-footer__contact">
+          <h2>Get in touch</h2>
+          <address>
+            <div className="site-footer__contact-item">
+              <Mail size={18} strokeWidth={1.5} aria-hidden="true" />
+              <div><span>Email</span><a href="mailto:support@agriflock360.com">support@agriflock360.com</a></div>
+            </div>
+            <div className="site-footer__contact-item">
+              <Phone size={18} strokeWidth={1.5} aria-hidden="true" />
+              <div><span>Kenya</span><a href="tel:+254729554434">+254 729 554 434</a></div>
+            </div>
+            <div className="site-footer__contact-item">
+              <Phone size={18} strokeWidth={1.5} aria-hidden="true" />
+              <div><span>United States</span><a href="tel:+16674469432">+1 667 446 9432</a></div>
+            </div>
+          </address>
         </div>
       </div>
-    </footer>
-  );
-};
+
+      <div className="site-footer__bottom">
+        <p>&copy; {new Date().getFullYear()} AgriFlock 360. All rights reserved.</p>
+        <nav className="site-footer__legal" aria-label="Legal information">
+          {legalLinks.map(({ label, href }) => <Link key={href} to={href}>{label}</Link>)}
+        </nav>
+      </div>
+      <p className="site-footer__credit">
+        Developed by{" "}
+        <a href="https://mglobalbusinessconsultancy.com" target="_blank" rel="noopener noreferrer">M'Global Business Consultancy</a>
+      </p>
+    </div>
+  </footer>
+);

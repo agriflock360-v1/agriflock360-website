@@ -14,6 +14,8 @@ import Feeding from "./pages/Feeding";
 // import Brooder from "./pages/Brooder"; // Temporarily disabled while brooder patent is being processed
 import Analytics from "./pages/Analytics";
 import About from "./pages/About";
+import Features from "./pages/Features";
+import Pricing from "./pages/Pricing";
 import Download from "./pages/Download";
 import WebApp from "./pages/WebApp";
 import ComingSoon from "./pages/ComingSoon";
@@ -49,6 +51,8 @@ const App = () => (
                 {/* <Route path="/brooder" element={<Brooder />} /> */}
                 <Route path="/analytics" element={<Analytics />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/pricing" element={<Pricing />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/download" element={<Download />} />
                 <Route path="/web-app" element={<WebApp />} />
