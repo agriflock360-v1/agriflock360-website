@@ -18,14 +18,20 @@ export function KnowledgeBaseChat() {
   const nextId = useRef(0);
 
   useEffect(() => {
-    if (open && log.current) log.current.scrollTop = log.current.scrollHeight;
+    if (!open || !log.current) return;
+    const latest = log.current.querySelector(".knowledge-exchange:last-child");
+    // Keep the start of a long policy answer visible, with the input always available.
+    log.current.scrollTop = latest
+      ? log.current.scrollTop + latest.getBoundingClientRect().top - log.current.getBoundingClientRect().top - 12
+      : 0;
   }, [open, exchanges]);
 
   const ask = (value: string, articleId?: string) => {
     const cleaned = value.trim().slice(0, 400);
     if (!cleaned) return;
-    const reply = articleId
-      ? { article: knowledgeArticles.find(article => article.id === articleId), suggestions: [] }
+    const article = articleId ? knowledgeArticles.find(item => item.id === articleId) : undefined;
+    const reply = article
+      ? { article, suggestions: article.related ?? [] }
       : searchKnowledge(cleaned);
     const exchange = { id: nextId.current++, question: cleaned, reply };
     setExchanges(previous => [...previous.slice(-(MAX_EXCHANGES - 1)), exchange]);
@@ -59,7 +65,7 @@ export function KnowledgeBaseChat() {
             <div className="knowledge-welcome">
               <p className="knowledge-welcome__label">A little guidance. A clear next step.</p>
               <h2>What would you like to know?</h2>
-              <p>Explore our company, app features, pricing and getting started. This is an automated website guide, not a live support agent.</p>
+              <p>Explore our company, app features, pricing, policies and getting started. This is an automated website guide, not a live support agent.</p>
             </div>
             <div role="log" aria-label="Knowledge base conversation" aria-live="polite" aria-relevant="additions" aria-atomic="false">
               {exchanges.map(exchange => (
@@ -70,6 +76,13 @@ export function KnowledgeBaseChat() {
                       <h3>{exchange.reply.article.title}</h3>
                       {exchange.reply.article.answer.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
                       <div className="knowledge-sources"><span>Read more on our website</span>{exchange.reply.article.sources.map(link => <Link key={link.to} to={link.to} onClick={() => setOpen(false)}>{link.label}<ArrowUpRight size={14} aria-hidden="true" /></Link>)}</div>
+                      {exchange.reply.article.topics && <details className="knowledge-topics">
+                        <summary>Browse document sections ({exchange.reply.article.topics.length})</summary>
+                        <div className="knowledge-suggestions">{exchange.reply.article.topics.map(id => {
+                          const topic = knowledgeArticles.find(item => item.id === id)!;
+                          return <button type="button" key={id} onClick={() => ask(topic.question, id)}>{topic.question}<ArrowUpRight size={14} aria-hidden="true" /></button>;
+                        })}</div>
+                      </details>}
                     </> : <p>{exchange.reply.message}</p>}
                   </article>
                 </div>
