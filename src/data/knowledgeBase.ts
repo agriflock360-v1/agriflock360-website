@@ -1,5 +1,6 @@
 import { featureDetails, featureFaqs } from "./features";
 import { farmerPlans, pricingTerms, professionalServices } from "./pricing";
+import { policyDocuments, policyKnowledgeArticles } from "./policies/knowledge";
 
 export interface KnowledgeArticle {
   id: string;
@@ -8,6 +9,9 @@ export interface KnowledgeArticle {
   answer: string[];
   keywords: string[];
   sources: { label: string; to: string }[];
+  related?: string[];
+  topics?: string[];
+  policy?: boolean;
 }
 
 const source = (label: string, to: string) => ({ label, to });
@@ -171,16 +175,36 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     answer: ["The website's Privacy Policy explains what information the website, mobile app, devices and services collect and how it is handled. Contact the team for questions or requests relating to your account data.", "This homepage guide searches public website content on your device. It does not send your chat messages to the team or an AI provider, and it does not save them between page visits. Use the Contact page if you want to send an enquiry."],
     keywords: ["privacy private data personal information safe secure security stored storage saved history chat messages encryption delete deletion"],
     sources: [source("Privacy Policy", "/privacy-policy"), contact],
+    topics: policyDocuments.find(document => document.id === "privacy")!.sections.map(section => section.id),
+    related: ["privacy-data", "privacy-rights", "privacy-retention"],
+  },
+  {
+    id: "sms", question: "How do I opt in or stop SMS messages?", title: "Your SMS choices",
+    answer: ["SMS consent is a separate, initially unchecked choice during registration in the mobile app. Messages cover service alerts and account notifications. Message frequency varies; message and data rates may apply. SMS consent is not a condition of purchase.", "Reply STOP to unsubscribe or HELP for assistance. Contact the team if you need help with your messaging preferences. Reading the SMS Consent page or using this guide does not enrol you in SMS messaging."],
+    keywords: ["sms text texts messaging message messages consent opt in opt out stop unsubscribe help checkbox phone alerts"],
+    sources: [source("SMS Consent", "/sms-consent"), source("STOP & HELP instructions", "/sms-consent#sms-stop-help"), contact],
+    topics: policyDocuments.find(document => document.id === "sms")!.sections.map(section => section.id),
+    related: ["sms-opt-in", "sms-messages", "sms-stop-help"],
   },
   {
     id: "terms", question: "Where can I read the terms?", title: "Terms and policies",
     answer: ["The website's Terms & Conditions and Privacy Policy are linked below. Vets and extension officers also read and accept their Terms & Conditions and Code of Conduct during onboarding in the app.", "For a specific refund, cancellation, billing or contractual question, contact the team with the details. This guide cannot decide requests or access your account."],
     keywords: ["terms conditions policy policies conduct refund refunds cancellation cancel billing contract agreement"],
     sources: [source("Terms & Conditions", "/terms-conditions"), source("Privacy Policy", "/privacy-policy"), contact],
+    topics: policyDocuments.find(document => document.id === "terms")!.sections.map(section => section.id),
+    related: ["terms-eligibility", "terms-payments", "terms-governing-law"],
   },
+  {
+    id: "policies", question: "What are your privacy, terms and SMS policies?", title: "Policies & your choices",
+    answer: ["Explore the Privacy Policy for information collection, use, sharing, security and your data rights. Read the Terms & Conditions for account responsibilities, payments, devices and service rules. SMS Consent explains opting in, message types and charges, and STOP / HELP instructions.", "Choose a document below to browse its sections or ask a specific question. Policy answers use the same published text as the document pages."],
+    keywords: ["policies documents legal privacy terms conditions sms consent"],
+    sources: policyDocuments.map(document => source(document.title, document.path)),
+    related: ["privacy", "terms", "sms"],
+  },
+  ...policyKnowledgeArticles,
 ];
 
-export const defaultQuestions = ["plans", "features", "vet-signup", "download", "company", "support"];
+export const defaultQuestions = ["plans", "features", "vet-signup", "download", "company", "policies", "support"];
 
 // Reuse the same approved answers in the homepage FAQ and the chat guide.
 export const homepageFaqs = ["company", "roles", "farmer-signup", "plans", "trial", "vet-signup", "service-rates", "download", "web", "roadmap"]

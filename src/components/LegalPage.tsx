@@ -1,13 +1,8 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowDown, ArrowRight, Check, ChevronDown, FileText, Mail, MessageSquare, Printer, ShieldCheck } from "lucide-react";
 import "./LegalPage.css";
-
-export interface LegalSection {
-  id: string;
-  title: string;
-  content: ReactNode;
-}
+import type { LegalSection } from "@/data/policies/types";
 
 interface LegalPageProps {
   kind: "privacy" | "terms" | "sms";

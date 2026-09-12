@@ -1,4 +1,5 @@
 import { knowledgeArticles, type KnowledgeArticle } from "../data/knowledgeBase";
+import { findPolicyTopic } from "./policySearch";
 
 export interface KnowledgeReply {
   message?: string;
@@ -22,14 +23,14 @@ const normalize = (text: string) => text.toLowerCase().normalize("NFKD").replace
 const tokens = (text: string) => [...new Set(normalize(text).split(" ").filter(word => word && !stopWords.has(word)).map(word => aliases[word] || word))];
 const index = knowledgeArticles.map(article => ({ article, words: new Set(tokens([article.title, article.question, ...article.keywords].join(" "))) }));
 const getArticle = (id: string) => knowledgeArticles.find(article => article.id === id)!;
-const answer = (id: string, suggestions: string[] = []): KnowledgeReply => ({ article: getArticle(id), suggestions });
+const answer = (id: string, suggestions?: string[]): KnowledgeReply => ({ article: getArticle(id), suggestions: suggestions ?? getArticle(id).related ?? [] });
 
 export function searchKnowledge(question: string): KnowledgeReply {
   const text = normalize(question.slice(0, 400));
   const words = tokens(text);
   const has = (...terms: string[]) => terms.some(term => words.includes(term));
   const exact = knowledgeArticles.find(article => normalize(article.question) === text);
-  if (exact) return { article: exact, suggestions: [] };
+  if (exact) return answer(exact.id);
 
   if (/^(hi|hello|hey|good morning|good afternoon|good evening|thanks|thank you)$/.test(text)) {
     return { message: "Hello! I can help you explore AgriFlock 360 using answers from our website. Choose a topic or ask a specific question below.", suggestions: ["company", "plans", "download"] };
@@ -40,6 +41,9 @@ export function searchKnowledge(question: string): KnowledgeReply {
   if (/\b(my|our)\b.*\b(application|approval|booking|order|payment|refund|account)\b/.test(text) && /\b(status|check|pending|approved|received|where|when|track|failed)\b/.test(text)) {
     return { message: "I cannot access accounts, bookings, payments or approval records. Please contact the AgriFlock team for help with your specific request.", suggestions: ["support", "vet-signup"] };
   }
+  const policyTopic = findPolicyTopic(text);
+  if (policyTopic) return answer(policyTopic);
+  if (has("contact", "support", "human")) return answer("support");
   if (has("transport", "travel", "kilometre", "kilometer", "km", "mileage")) return answer("transport", ["service-rates"]);
   if (has("trial", "free")) return answer("trial", ["plans"]);
   if (has("earn", "earnings", "commission", "revenue", "payout", "salary")) return answer("earnings", ["service-rates", "vet-signup"]);
@@ -68,7 +72,7 @@ export function searchKnowledge(question: string): KnowledgeReply {
     if (ranked[1] && best.score - ranked[1].score < 0.4) {
       return { message: "I found a few relevant topics. Which one would you like to explore?", suggestions: [best.article.id, ...alternatives] };
     }
-    return { article: best.article, suggestions: alternatives };
+    return { article: best.article, suggestions: best.article.related ?? alternatives };
   }
   return { message: "I don't have a published answer to that question in this website's knowledge base. Try a specific topic below, or contact our team for help.", suggestions: ["features", "plans", "support"] };
 }

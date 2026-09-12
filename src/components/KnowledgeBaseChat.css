@@ -29,6 +29,10 @@
 .knowledge-suggestions button { display: flex; align-items: center; gap: 8px; text-align: left; min-height: 38px; padding: 9px 12px; border: 1px solid #cddccb; border-radius: 10px; background: white; color: #155531; font-size: 12px; line-height: 1.5; }
 .knowledge-suggestions button:hover { background: #edf4e9; border-color: #8ca285; }
 .knowledge-suggestions svg { flex: none; margin-left: auto; }
+.knowledge-topics { margin-top: 16px; border-top: 1px solid #e8ede5; padding-top: 12px; }
+.knowledge-topics summary { color: #155531; cursor: pointer; font-size: 12px; line-height: 1.6; font-weight: 600; padding: 5px 0; }
+.knowledge-topics[open] summary { margin-bottom: 10px; }
+.knowledge-topics summary:focus-visible { outline: 3px solid #d8a52b; outline-offset: 3px; }
 .knowledge-bottom { flex: none; padding: 14px 16px 13px; border-top: 1px solid #e2e9df; background: white; }
 .knowledge-form { display: flex; align-items: center; border: 1px solid #b8c8b6; border-radius: 12px; overflow: hidden; }
 .knowledge-form:focus-within { outline: 2px solid #155531; outline-offset: 2px; }
