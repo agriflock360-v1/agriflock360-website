@@ -16,6 +16,7 @@ Questions are processed locally. The guide does not send chat messages to a prov
 - All 36 sections of Privacy Policy, Terms & Conditions and SMS Consent come from `src/data/policies/privacy.tsx`, `terms.tsx` and `sms.tsx`. These are the same sections rendered on the document pages. The guide converts their static text to readable paragraphs and links to the matching section, preserving qualifications such as refund exceptions and the existing governing-law clause.
 - `src/data/policies/knowledge.ts` adds visitor questions and keywords for each policy section. When adding a section, add its question here too. Document overview answers offer an expandable list of every section; the welcome questions include a policies entry.
 - `src/lib/policySearch.ts` recognises common policy questions before general product keywords, so questions about selling personal data or contact-form privacy do not open marketplace or web-app answers.
+- `src/data/projectKnowledge.ts` contains 14 reviewed project-document topics and their source context. The chatbot and `/knowledge-base` page share these answers. The welcome menu includes a project overview with every topic; `src/lib/projectSearch.ts` recognises document questions, including survey SMS charges separately from general SMS terms.
 - The homepage FAQ reuses selected knowledge articles to keep its answers consistent with the guide.
 - Review company roles, service availability, policy links and development status when those change. The guide does not crawl new pages automatically. Publish updates by rebuilding and deploying the site.
 
@@ -34,6 +35,17 @@ PDFs, Word files, spreadsheets, presentations, images and pasted text can be rev
 5. Run the knowledge checks, TypeScript check and production build. Rebuild and deploy to make the new information available to visitors.
 
 All information bundled with the site is public. Keep personal records, credentials and confidential company material out of both the answers and frontend source data.
+
+### Project document review — 12 September 2026
+
+Reviewed the implementation status report, backup and recovery runbook, slide deck, MVP concept note and both supplied solar-brooder impact reports. The two impact files are identical and count as one source, giving five unique documents from six files.
+
+- The August implementation report supports dated answers about offline capture, online-only functions, reconnection, feedback, surveys and messaging status. WhatsApp remains unconfirmed; free inbound survey replies do not replace the general SMS message-rate notice.
+- The concept note and slide deck support product direction, solar brooding, regenerative practices and target markets. Older team roles, commercial projections, expansion plans and pilot targets do not override newer website facts or establish live availability.
+- Impact assumptions are explicitly labelled as modelling. Five million farmers is a scenario, not current reach. Following the user's decision, carbon benefits remain qualitative: conflicting emissions estimates and projected carbon income are not published.
+- Only a high-level continuity summary is published from the runbook. Infrastructure identifiers, commands, credentials, recovery procedures and internal provider charges are excluded. No recovery-time, zero-loss or retention guarantee is inferred.
+
+Original documents are not bundled or offered as downloads. Source links open the matching public summary, which names the document and relevant section. Current pricing, the 60-day trial, in-person-only transport charges, vet approval flow and web-app development status remain unchanged.
 
 ## Behavior and limits
 

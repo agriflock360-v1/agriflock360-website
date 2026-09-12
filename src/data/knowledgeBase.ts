@@ -1,6 +1,7 @@
 import { featureDetails, featureFaqs } from "./features";
 import { farmerPlans, pricingTerms, professionalServices } from "./pricing";
 import { policyDocuments, policyKnowledgeArticles } from "./policies/knowledge";
+import { projectKnowledgeArticles, projectKnowledgeOverview } from "./projectKnowledge";
 
 export interface KnowledgeArticle {
   id: string;
@@ -202,9 +203,11 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     related: ["privacy", "terms", "sms"],
   },
   ...policyKnowledgeArticles,
+  projectKnowledgeOverview,
+  ...projectKnowledgeArticles,
 ];
 
-export const defaultQuestions = ["plans", "features", "vet-signup", "download", "company", "policies", "support"];
+export const defaultQuestions = ["plans", "features", "vet-signup", "download", "project-documents", "company", "policies", "support"];
 
 // Reuse the same approved answers in the homepage FAQ and the chat guide.
 export const homepageFaqs = ["company", "roles", "farmer-signup", "plans", "trial", "vet-signup", "service-rates", "download", "web", "roadmap"]

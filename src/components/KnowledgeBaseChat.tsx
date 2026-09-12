@@ -77,7 +77,7 @@ export function KnowledgeBaseChat() {
                       {exchange.reply.article.answer.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
                       <div className="knowledge-sources"><span>Read more on our website</span>{exchange.reply.article.sources.map(link => <Link key={link.to} to={link.to} onClick={() => setOpen(false)}>{link.label}<ArrowUpRight size={14} aria-hidden="true" /></Link>)}</div>
                       {exchange.reply.article.topics && <details className="knowledge-topics">
-                        <summary>Browse document sections ({exchange.reply.article.topics.length})</summary>
+                        <summary>Browse topics ({exchange.reply.article.topics.length})</summary>
                         <div className="knowledge-suggestions">{exchange.reply.article.topics.map(id => {
                           const topic = knowledgeArticles.find(item => item.id === id)!;
                           return <button type="button" key={id} onClick={() => ask(topic.question, id)}>{topic.question}<ArrowUpRight size={14} aria-hidden="true" /></button>;
