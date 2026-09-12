@@ -1,5 +1,6 @@
 import { knowledgeArticles, type KnowledgeArticle } from "../data/knowledgeBase";
 import { findPolicyTopic } from "./policySearch";
+import { findProjectTopic } from "./projectSearch";
 
 export interface KnowledgeReply {
   message?: string;
@@ -41,6 +42,8 @@ export function searchKnowledge(question: string): KnowledgeReply {
   if (/\b(my|our)\b.*\b(application|approval|booking|order|payment|refund|account)\b/.test(text) && /\b(status|check|pending|approved|received|where|when|track|failed)\b/.test(text)) {
     return { message: "I cannot access accounts, bookings, payments or approval records. Please contact the AgriFlock team for help with your specific request.", suggestions: ["support", "vet-signup"] };
   }
+  const projectTopic = findProjectTopic(text);
+  if (projectTopic) return answer(projectTopic);
   const policyTopic = findPolicyTopic(text);
   if (policyTopic) return answer(policyTopic);
   if (has("contact", "support", "human")) return answer("support");

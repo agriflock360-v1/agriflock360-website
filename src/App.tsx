@@ -23,6 +23,7 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import SmsConsent from "./pages/SmsConsent";
+import ProjectKnowledge from "./pages/ProjectKnowledge";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -60,6 +61,7 @@ const App = () => (
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-conditions" element={<TermsConditions />} />
                 <Route path="/sms-consent" element={<SmsConsent />} />
+                <Route path="/knowledge-base" element={<ProjectKnowledge />} />
                 <Route path="/process-logo" element={<ProcessLogo />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
