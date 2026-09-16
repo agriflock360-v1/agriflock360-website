@@ -59,7 +59,7 @@ const engineeringTeam = [
   },
   {
     name: "Mumbua Mutuku",
-    position: "Backend & DevOps Engineer",
+    position: "Backend Engineer",
     image: mumbuaPhoto,
     linkedin: "https://www.linkedin.com/in/mumbuamutuku",
   },
