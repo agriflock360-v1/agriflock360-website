@@ -1,0 +1,57 @@
+.not-found-page {
+  display: grid;
+  min-height: min(920px, 100svh);
+  place-items: center;
+  padding: 108px 24px 52px;
+  overflow: hidden;
+  color: hsl(var(--brand-dark-grey));
+  background: hsl(45 45% 97%);
+  background-image: radial-gradient(ellipse at 50% 38%, hsl(var(--brand-gold) / .07), transparent 62%);
+}
+
+.not-found-content { width: 100%; max-width: 760px; text-align: center; }
+.not-found-eyebrow { display: inline-flex; align-items: center; gap: 9px; color: hsl(var(--brand-green)); font-size: 11px; font-weight: 600; line-height: 1.6; letter-spacing: .15em; text-transform: uppercase; }
+.not-found-eyebrow > span { width: 6px; height: 6px; border-radius: 50%; background: hsl(var(--brand-gold)); }
+
+.not-found-art { display: block; width: min(100%, 520px); height: auto; margin: 12px auto 21px; overflow: visible; }
+.not-found-art__number { fill: hsl(var(--brand-green)); font-family: inherit; font-size: 236px; font-weight: 600; letter-spacing: -.06em; }
+.not-found-art__sun { fill: hsl(var(--brand-gold) / .14); }
+.not-found-art__ground { fill: hsl(var(--brand-olive) / .1); }
+.not-found-art__cloud { stroke: hsl(var(--brand-olive) / .3); stroke-width: 3; stroke-linecap: round; }
+.not-found-art__body, .not-found-art__feather { fill: hsl(43 84% 68%); }
+.not-found-art__wing { stroke: hsl(var(--brand-gold)); stroke-width: 3; stroke-linecap: round; }
+.not-found-art__eye { fill: hsl(var(--brand-dark-grey)); }
+.not-found-art__beak { fill: hsl(var(--brand-burnt-orange)); }
+.not-found-art__cheek { fill: hsl(var(--brand-burnt-orange) / .26); }
+.not-found-art__shell { fill: hsl(45 60% 99%); stroke: hsl(43 29% 73%); stroke-width: 2; stroke-linejoin: round; }
+.not-found-art__shell-detail { stroke: hsl(43 29% 80%); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.not-found-art__sprout { stroke: hsl(var(--brand-olive)); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.not-found-art__trail { stroke: hsl(var(--brand-olive) / .5); stroke-width: 2; stroke-dasharray: 3 7; stroke-linecap: round; }
+.not-found-art__chick { transform-origin: 320px 211px; animation: not-found-peek 5s ease-in-out infinite; }
+@keyframes not-found-peek { 0%, 65%, 100% { transform: rotate(0); } 76%, 88% { transform: rotate(-5deg); } }
+
+.not-found-page h1 { font-size: clamp(38px, 4.4vw, 57px); font-weight: 550; line-height: 1.08; letter-spacing: -.055em; }
+.not-found-page h1 > span { color: hsl(var(--brand-green)); }
+.not-found-description { margin: 21px auto 0; max-width: 530px; color: hsl(var(--brand-charcoal)); font-size: 15px; line-height: 1.8; text-wrap: pretty; }
+.not-found-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px 28px; margin-top: 28px; }
+.not-found-actions > a:first-child { min-height: 50px; height: auto; gap: 12px; padding: 14px 20px; border-radius: 9px; font-size: 13px; }
+.not-found-explore { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; color: hsl(var(--brand-green)); font-size: 13px; font-weight: 600; text-decoration: underline; text-decoration-color: hsl(var(--brand-green) / .3); text-underline-offset: 6px; }
+.not-found-explore:hover { text-decoration-color: currentColor; }
+.not-found-help { margin: 34px auto 0; padding-top: 23px; width: fit-content; max-width: 100%; border-top: 1px solid hsl(var(--brand-green) / .12); color: hsl(var(--brand-charcoal)); font-size: 12px; line-height: 1.9; }
+.not-found-help a { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; margin-left: 4px; color: hsl(var(--brand-green)); text-decoration: underline; text-underline-offset: 4px; }
+.not-found-page a:focus-visible { outline: 2px solid hsl(var(--brand-green)); outline-offset: 5px; }
+
+@media (max-width: 560px) {
+  .not-found-page { min-height: 100svh; padding: 100px 24px 40px; }
+  .not-found-art { width: min(100%, 390px); margin-block: 18px 25px; }
+  .not-found-page h1 { font-size: clamp(35px, 9.3vw, 48px); }
+  .not-found-description { max-width: 330px; margin-top: 18px; font-size: 14px; }
+  .not-found-desktop-break { display: none; }
+  .not-found-actions { flex-direction: column; gap: 8px; margin-top: 24px; }
+  .not-found-actions > a:first-child { width: 100%; max-width: 290px; }
+  .not-found-help { margin-top: 25px; padding-top: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found-art__chick { animation: none; }
+}
