@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowDown, ArrowRight, BellRing, Check, ChevronDown, ClipboardList, House, MapPin, QrCode, Smartphone, Sprout, Stethoscope, Tractor, Users, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -77,12 +76,6 @@ function FeatureVisual({ visual }: { visual: string }) {
 }
 
 const Features = () => {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "App Features | AgriFlock 360";
-    return () => { document.title = previousTitle; };
-  }, []);
-
   return (
     <div className="features-page">
       <header className="features-hero">

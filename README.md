@@ -8,7 +8,7 @@ Marketing website for Agriflock360, built with Vite, React, TypeScript, shadcn/u
 
 Requirements:
 
-- Node.js 22+
+- Node.js 22.12+ (Node 24 verified)
 - npm 10+
 
 Install dependencies and start the development server:
@@ -53,7 +53,7 @@ npm run dev
 
 ## Deployment
 
-The site can be deployed on any static hosting platform that supports Vite builds.
+Production uses Cloudflare Pages. The build prerenders each page and generates an XML sitemap alongside the Vite assets.
 
 Build command:
 
@@ -67,4 +67,6 @@ Publish directory:
 dist
 ```
 
-For Netlify, make sure the site is configured to use the build command above and publish the `dist` directory.
+Keep the generated `404.html` and route HTML files when deploying. Do not add a catch-all rewrite to the homepage. Other static hosts must support extensionless HTML routes and return HTTP 404 for unknown URLs.
+
+Run `npm run test:seo` after building to check the generated SEO output. See [SEO and Search Console](docs/seo.md) for route metadata, hosting details and post-deployment sitemap submission.

@@ -26,12 +26,6 @@ export function LegalPage({ kind, title, description, updated, effective, highli
   const Icon = documents.find(document => document.kind === kind)!.icon;
 
   useEffect(() => {
-    const previousTitle = document.title;
-    document.title = `${title} | AgriFlock 360`;
-    return () => { document.title = previousTitle; };
-  }, [title]);
-
-  useEffect(() => {
     let frame = 0;
     const update = () => {
       frame = 0;

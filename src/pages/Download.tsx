@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, ChevronDown, ExternalLink, Gift, Mail, Phone, QrCode, Smartphone, Stethoscope, Tractor } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,12 +38,6 @@ function DownloadQR({ image, platform }: { image: string; platform: string }) {
 }
 
 const Download = () => {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "Download the App | AgriFlock 360";
-    return () => { document.title = previousTitle; };
-  }, []);
-
   return (
     <div className="download-page">
       <header className="download-hero download-container">

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ArrowDown, ArrowRight, Check, ChevronDown, ClipboardList, Gift, MapPin, Phone, ShoppingBag, Smartphone, Sprout, Stethoscope, Syringe, Tractor, Truck, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -31,12 +30,6 @@ const pricingFaqs = [
 ];
 
 const Pricing = () => {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "Pricing | AgriFlock 360";
-    return () => { document.title = previousTitle; };
-  }, []);
-
   return (
     <div className="pricing-page">
       <header className="pricing-hero pricing-container">
