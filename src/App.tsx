@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -28,7 +27,6 @@ import ProjectKnowledge from "./pages/ProjectKnowledge";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
-const ProcessLogo = lazy(() => import("./pages/ProcessLogo"));
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -40,7 +38,6 @@ const App = () => (
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-1">
-          <Suspense fallback={<div className="min-h-screen" />}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/vaccination" element={<Vaccination />} />
@@ -58,10 +55,8 @@ const App = () => (
               <Route path="/terms-conditions" element={<TermsConditions />} />
               <Route path="/sms-consent" element={<SmsConsent />} />
               <Route path="/knowledge-base" element={<ProjectKnowledge />} />
-              <Route path="/process-logo" element={<ProcessLogo />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </Suspense>
         </main>
         <Footer />
         <ScrollToTopButton />
