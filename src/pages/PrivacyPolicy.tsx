@@ -6,7 +6,7 @@ const PrivacyPolicy = () => (
     kind="privacy"
     title="Privacy Policy"
     description="Understand what information we collect, how we use it and the choices you have across AgriFlock 360."
-    updated="12 September 2026"
+    updated="21 September 2026"
     effective="Effective immediately"
     highlights={[
       { title: "Information with a purpose", text: "Account, farm and device information helps us provide the services you use." },

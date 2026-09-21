@@ -6,7 +6,7 @@ const read = path => readFile(path, "utf8");
 const origin = "https://www.agriflock360.com";
 const routes = [...(await read("src/App.tsx")).replace(/\{\/\*[\s\S]*?\*\/\}/g, "").matchAll(/<Route path="([^"]+)"/g)]
   .map(match => match[1]).filter(path => path !== "*");
-const excluded = new Set(["/coming-soon", "/process-logo", "/404"]);
+const excluded = new Set(["/coming-soon", "/404"]);
 const sitemap = await read("dist/sitemap.xml");
 assert.match(sitemap, /^<\?xml version="1.0" encoding="UTF-8"\?>/);
 assert.match(sitemap, /<urlset xmlns="http:\/\/www.sitemaps.org\/schemas\/sitemap\/0.9">/);

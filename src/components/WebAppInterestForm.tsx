@@ -4,12 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { contactApi } from "@/services/api";
+import { SpamProtection } from "./SpamProtection";
 
 export function WebAppInterestForm() {
   const [details, setDetails] = useState({ name: "", email: "", role: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ success: boolean; message: string } | null>(null);
   const pending = useRef(false);
+  const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaReset, setCaptchaReset] = useState(0);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
@@ -28,6 +31,10 @@ export function WebAppInterestForm() {
       return;
     }
 
+    if (!captchaToken) {
+      setFeedback({ success: false, message: "Please complete the security check before sending." });
+      return;
+    }
     pending.current = true;
     setIsSubmitting(true);
     setFeedback(null);
@@ -37,6 +44,7 @@ export function WebAppInterestForm() {
         email: details.email,
         company: "",
         topic: "Web app launch updates",
+        captchaToken,
         message: `Please email me about the availability of the AgriFlock 360 web app.\nMy role: ${details.role || "Not specified"}.`,
       });
       if (result.success === true) {
@@ -46,6 +54,8 @@ export function WebAppInterestForm() {
         setFeedback({ success: false, message: result.message });
       }
     } finally {
+      setCaptchaToken("");
+      setCaptchaReset(value => value + 1);
       pending.current = false;
       setIsSubmitting(false);
     }
@@ -64,7 +74,8 @@ export function WebAppInterestForm() {
           <div><Label htmlFor="web-interest-email">Email address <span>(required)</span></Label><Input id="web-interest-email" name="email" type="email" autoComplete="email" value={details.email} onChange={handleChange} placeholder="you@example.com" required maxLength={254} /></div>
           <div><Label htmlFor="web-interest-role">I’m a… <span>(optional)</span></Label><select id="web-interest-role" name="role" value={details.role} onChange={handleChange}><option value="">Choose your role</option><option>Farmer</option><option>Vet / extension officer</option><option>Partner / organisation</option><option>Other</option></select></div>
         </fieldset>
-        <Button variant="gold" type="submit" disabled={isSubmitting}>{isSubmitting ? <>Sending…<LoaderCircle className="web-interest__spinner" size={18} aria-hidden="true" /></> : <>Request launch updates<ArrowRight size={18} aria-hidden="true" /></>}</Button>
+        <SpamProtection key={captchaReset} onVerify={setCaptchaToken} />
+        <Button variant="gold" type="submit" disabled={isSubmitting || !captchaToken}>{isSubmitting ? <>Sending…<LoaderCircle className="web-interest__spinner" size={18} aria-hidden="true" /></> : <>Request launch updates<ArrowRight size={18} aria-hidden="true" /></>}</Button>
         <p id="web-interest-note" className="web-interest__note">Your request goes to the AgriFlock 360 team. We’ll use your email to contact you about web app availability.</p>
       </form>
       <div className={`web-interest__feedback${feedback?.success === false ? " web-interest__feedback--error" : ""}`} role="status" aria-atomic="true">{feedback && <p>{feedback.message}</p>}</div>

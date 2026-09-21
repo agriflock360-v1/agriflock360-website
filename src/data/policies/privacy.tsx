@@ -85,6 +85,7 @@ export const privacySections: LegalSection[] = [
     content: (<>
       <h3>Contact and launch-update requests</h3>
       <p>When you submit the Contact form or request web app launch updates, the information you enter is sent through Web3Forms to the AgriFlock 360 team. We use your details to respond to your enquiry or contact you about web app availability.</p>
+      <p>These forms use hCaptcha to check for automated submissions. The security check connects your browser to hCaptcha, and its verification token is sent with your enquiry to Web3Forms. See the <a href="https://www.hcaptcha.com/privacy" target="_blank" rel="noopener noreferrer">hCaptcha Privacy Policy (opens in a new tab)</a> for information about its processing of security-check data.</p>
       <p>The Copy enquiry button copies the text to your clipboard. Copying alone does not send an enquiry to our team. You can paste it into an email and decide whether to send it.</p>
       <h3>Ask AgriFlock</h3>
       <p>The homepage knowledge-base guide processes questions in your browser. It does not send chat messages to our support inbox or an AI provider and does not save them in browser storage. Conversation history is kept temporarily while you remain on the homepage.</p>
@@ -168,6 +169,7 @@ export const privacySections: LegalSection[] = [
         <li>Cloud hosting providers (AWS, EMQX, Firebase)</li>
         <li>Customer-support partners</li>
         <li>Web3Forms, which processes website enquiries and launch-update requests for delivery to our support team</li>
+        <li>hCaptcha, which provides the security check on our website forms</li>
       </ul>
       <p>All partners must comply with strict data protection agreements.</p>
       <p>

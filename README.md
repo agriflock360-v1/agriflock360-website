@@ -70,3 +70,7 @@ dist
 Keep the generated `404.html` and route HTML files when deploying. Do not add a catch-all rewrite to the homepage. Other static hosts must support extensionless HTML routes and return HTTP 404 for unknown URLs.
 
 Run `npm run test:seo` after building to check the generated SEO output. See [SEO and Search Console](docs/seo.md) for route metadata, hosting details and post-deployment sitemap submission.
+
+## Security
+
+See [Security measures implemented](docs/security-measures-implemented.md) for the response headers, dependency updates, protected forms, validation results and required Web3Forms account configuration. Run `npm run test:security` after building, and `npm audit` to check current dependency advisories. Use `npm ci` for reproducible deployment installs. Development and preview servers bind to loopback by default.

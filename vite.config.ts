@@ -6,9 +6,10 @@ import { renderSeoHead } from "./src/lib/seo.ts";
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
   server: {
-    host: "::",
+    host: "127.0.0.1",
     port: 8080,
   },
+  preview: { host: "127.0.0.1" },
   plugins: [react(), {
     name: "page-seo",
     transformIndexHtml(html) {
@@ -27,10 +28,6 @@ export default defineConfig(() => ({
         manualChunks(id) {
           if (!id.includes("node_modules")) {
             return;
-          }
-
-          if (id.includes("@huggingface/transformers") || id.includes("onnxruntime-web")) {
-            return "ai-background-removal";
           }
 
           if (id.includes("react") || id.includes("react-dom") || id.includes("react-router-dom")) {

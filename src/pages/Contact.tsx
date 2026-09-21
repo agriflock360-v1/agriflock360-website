@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { contactApi } from "@/services/api";
+import { SpamProtection } from "@/components/SpamProtection";
 import "./Contact.css";
 
 const supportEmail = "support@agriflock360.com";
@@ -29,6 +30,8 @@ const Contact = () => {
   const [isCopying, setIsCopying] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const pendingAction = useRef(false);
+  const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaReset, setCaptchaReset] = useState(0);
   const isBusy = isCopying || isSubmitting;
   const selectedTopic = enquiryTopics.find((item) => item.title === topic)!;
 
@@ -80,11 +83,17 @@ const Contact = () => {
       return;
     }
 
+    if (!captchaToken) {
+      setStatusKind("error");
+      setStatus("Please complete the security check before sending.");
+      return;
+    }
+
     pendingAction.current = true;
     setIsSubmitting(true);
     setStatus("");
     try {
-      const result = await contactApi.submitEnquiry({ ...formData, topic });
+      const result = await contactApi.submitEnquiry({ ...formData, topic, captchaToken });
       if (result.success === true) {
         setStatusKind("success");
         setStatus(`Thank you. Your enquiry has been submitted to our team. We’ll use ${formData.email.trim()} to get back to you.`);
@@ -95,6 +104,9 @@ const Contact = () => {
         setStatus(result.message);
       }
     } finally {
+      // Tokens are single-use, including requests whose delivery is uncertain.
+      setCaptchaToken("");
+      setCaptchaReset(value => value + 1);
       setIsSubmitting(false);
       pendingAction.current = false;
     }
@@ -141,7 +153,8 @@ const Contact = () => {
                 <div className="contact-field contact-field--wide"><Label htmlFor="contact-company">Farm / organisation <span>(optional)</span></Label><Input id="contact-company" name="company" autoComplete="organization" placeholder="Your farm or organisation name" value={formData.company} onChange={handleChange} maxLength={150} /></div>
                 <div className="contact-field contact-field--wide"><Label htmlFor="contact-message">Your message <span>(required)</span></Label><p className="contact-field__hint" id="contact-message-hint">{selectedTopic.hint}</p><Textarea id="contact-message" name="message" placeholder="How can we help?" value={formData.message} onChange={handleChange} required aria-describedby="contact-message-hint" rows={5} maxLength={3000} /></div>
               </fieldset>
-              <div className="contact-form-actions"><Button variant="gold" type="submit" disabled={isBusy}>{isSubmitting ? <>Sending…<LoaderCircle className="contact-sending-icon" size={17} aria-hidden="true" /></> : <>Send enquiry<Send size={17} aria-hidden="true" /></>}</Button><Button variant="ghost" type="submit" value="copy" disabled={isBusy}><Copy size={16} aria-hidden="true" />{isCopying ? "Copying…" : "Copy enquiry"}</Button></div>
+              <SpamProtection key={captchaReset} onVerify={setCaptchaToken} />
+              <div className="contact-form-actions"><Button variant="gold" type="submit" disabled={isBusy || !captchaToken}>{isSubmitting ? <>Sending…<LoaderCircle className="contact-sending-icon" size={17} aria-hidden="true" /></> : <>Send enquiry<Send size={17} aria-hidden="true" /></>}</Button><Button variant="ghost" type="submit" value="copy" disabled={isBusy}><Copy size={16} aria-hidden="true" />{isCopying ? "Copying…" : "Copy enquiry"}</Button></div>
               <p className="contact-form-help">Prefer to email us yourself? Write to <a href={`mailto:${supportEmail}`}>{supportEmail}</a>, or copy your enquiry to use in your email app.</p>
               <div className={`contact-form-status contact-form-status--${statusKind}`} role="status" aria-atomic="true">{status && <p>{status}</p>}</div>
             </form>

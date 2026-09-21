@@ -31,7 +31,6 @@ export const seoPages: PageSeo[] = [
   { path: "/terms-conditions", title: "Terms & Conditions | AgriFlock 360", description: "Review the AgriFlock 360 terms for accounts, subscriptions, payments, devices, professional services and responsibilities when using the platform.", label: "Terms & conditions" },
   { path: "/sms-consent", title: "SMS Consent & Messaging Preferences | AgriFlock 360", description: "Learn how AgriFlock 360 SMS consent works, what messages you may receive, possible charges and how to opt out or request help using STOP and HELP.", label: "SMS consent" },
   { path: "/coming-soon", title: "Web App Launch Updates | AgriFlock 360", description: "Register your interest in the AgriFlock 360 web app. Web access is in development; poultry farmers and professionals can get started with the mobile app today.", label: "Web launch updates", noindex: true },
-  { path: "/process-logo", title: "Logo Processing Tool | AgriFlock 360", description: "Internal AgriFlock 360 logo processing utility. Visit our main website to explore the poultry farm management app and support services.", label: "Logo tool", noindex: true },
 ];
 
 const notFound: PageSeo = { path: "/404", title: "Page Not Found | AgriFlock 360", description: "This page could not be found. Explore AgriFlock 360 poultry farming tools or contact our team for help.", label: "Page not found", noindex: true };

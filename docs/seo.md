@@ -10,7 +10,7 @@ The canonical origin is `https://www.agriflock360.com`, matching the production 
 
 Structured data describes the organization, website, current page, breadcrumbs and relevant app pages. Pricing offers come from the same KES plan data as the visible pricing page. No ratings or reviews are invented. These tags do not guarantee a rich result.
 
-The temporary web-launch page (`/coming-soon`) and internal logo tool (`/process-logo`) are `noindex, follow` and omitted from the sitemap. The public project knowledge base remains indexable. The disabled `/brooder` route returns 404. Missing pages have no canonical or promotional structured data, and are marked `noindex` even during client navigation.
+The temporary web-launch page (`/coming-soon`) is `noindex, follow` and omitted from the sitemap. The public project knowledge base remains indexable. The removed logo tool (`/process-logo`) and disabled `/brooder` route return 404. Missing pages have no canonical or promotional structured data, and are marked `noindex` even during client navigation.
 
 ## Cloudflare Pages
 
@@ -36,7 +36,7 @@ Sitemap submission guidance: https://developers.google.com/search/docs/crawling-
 
 ## Implementation validation (21 September 2026)
 
-- Production build and generated SEO checks passed for all 16 routes, the 404 page and 14 sitemap entries.
+- Production build and generated SEO checks passed for all 15 routes, the 404 page and 14 sitemap entries.
 - TypeScript checks and lint on all changed source files passed. Repository-wide lint still reports the existing errors in `src/components/ui/command.tsx`, `src/components/ui/textarea.tsx` and `tailwind.config.ts`.
 - The existing knowledge-base checks passed (79 visitor questions and 83 sourced articles).
 - Chromium verified every route, metadata during navigation and browser history, recovery from noindex/error pages, and canonical URLs with tracking parameters.
