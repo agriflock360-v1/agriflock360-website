@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { renderSeoHead } from "./src/lib/seo.ts";
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
@@ -8,10 +9,15 @@ export default defineConfig(() => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react()],
+  plugins: [react(), {
+    name: "page-seo",
+    transformIndexHtml(html) {
+      return html.replace("<!--seo-head-->", `<!--seo-head-start-->\n    ${renderSeoHead("/")}\n    <!--seo-head-end-->`);
+    },
+  }],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
   build: {

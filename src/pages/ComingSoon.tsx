@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ArrowRight, CalendarDays, Monitor, Smartphone, Stethoscope, Tractor } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,12 +7,6 @@ import { pricingTerms } from "@/data/pricing";
 import "./WebApp.css";
 
 export default function ComingSoon() {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "Web App Coming Soon | AgriFlock 360";
-    return () => { document.title = previousTitle; };
-  }, []);
-
   return (
     <div className="web-page web-launch-page">
       <div className="web-launch-hero web-container">

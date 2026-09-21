@@ -3,7 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { Seo } from "./components/Seo";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -34,43 +35,37 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter
-        future={{
-          v7_relativeSplatPath: true,
-          v7_startTransition: true,
-        }}
-      >
-        <ScrollToTop />
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-1">
-            <Suspense fallback={<div className="min-h-screen" />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/vaccination" element={<Vaccination />} />
-                <Route path="/feeding" element={<Feeding />} />
-                {/* <Route path="/brooder" element={<Brooder />} /> */}
-                <Route path="/analytics" element={<Analytics />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/features" element={<Features />} />
-                <Route path="/pricing" element={<Pricing />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/download" element={<Download />} />
-                <Route path="/web-app" element={<WebApp />} />
-                <Route path="/coming-soon" element={<ComingSoon />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms-conditions" element={<TermsConditions />} />
-                <Route path="/sms-consent" element={<SmsConsent />} />
-                <Route path="/knowledge-base" element={<ProjectKnowledge />} />
-                <Route path="/process-logo" element={<ProcessLogo />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </main>
-          <Footer />
-          <ScrollToTopButton />
-        </div>
-      </BrowserRouter>
+      <Seo />
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-1">
+          <Suspense fallback={<div className="min-h-screen" />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/vaccination" element={<Vaccination />} />
+              <Route path="/feeding" element={<Feeding />} />
+              {/* <Route path="/brooder" element={<Brooder />} /> */}
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/features" element={<Features />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/download" element={<Download />} />
+              <Route path="/web-app" element={<WebApp />} />
+              <Route path="/coming-soon" element={<ComingSoon />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-conditions" element={<TermsConditions />} />
+              <Route path="/sms-consent" element={<SmsConsent />} />
+              <Route path="/knowledge-base" element={<ProjectKnowledge />} />
+              <Route path="/process-logo" element={<ProcessLogo />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
+        <ScrollToTopButton />
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );

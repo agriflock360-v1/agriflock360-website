@@ -1,16 +1,9 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, FileText } from "lucide-react";
 import { projectKnowledgeArticles, projectSources } from "@/data/projectKnowledge";
 import "./ProjectKnowledge.css";
 
 export default function ProjectKnowledge() {
-  useEffect(() => {
-    const previous = document.title;
-    document.title = "Project Knowledge Base | AgriFlock 360";
-    return () => { document.title = previous; };
-  }, []);
-
   return <div className="project-guide">
     <header className="project-guide__hero"><div className="project-guide__container">
       <p className="project-guide__eyebrow"><BookOpen size={17} aria-hidden="true" />AgriFlock 360 · Project knowledge base</p>

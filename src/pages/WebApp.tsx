@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ArrowDown, ArrowRight, BarChart3, ChevronDown, Monitor, Smartphone, Sprout, Stethoscope, Tractor } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -18,12 +17,6 @@ const webFaqs = [
 ];
 
 export default function WebApp() {
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "Web App Overview | AgriFlock 360";
-    return () => { document.title = previousTitle; };
-  }, []);
-
   return (
     <div className="web-page web-overview-page">
       <header className="web-overview-hero web-container">

@@ -9,9 +9,8 @@ type HeroVideoProps = {
 
 export const HeroVideo = ({ videoSrc, posterSrc, posterSmallSrc }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [reducedMotion, setReducedMotion] = useState(
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
+  // Start with the poster on both the server and the first client render.
+  const [reducedMotion, setReducedMotion] = useState(true);
   const [userPaused, setUserPaused] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
@@ -20,6 +19,7 @@ export const HeroVideo = ({ videoSrc, posterSrc, posterSmallSrc }: HeroVideoProp
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const onChange = () => setReducedMotion(preference.matches);
+    onChange();
     preference.addEventListener("change", onChange);
     return () => preference.removeEventListener("change", onChange);
   }, []);
