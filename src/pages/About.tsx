@@ -10,6 +10,7 @@ import mititiPhoto from "@/assets/mititi-isaac.jpg";
 import mumbuaPhoto from "@/assets/mumbua-mutuku.jpeg";
 import dicksonPhoto from "@/assets/dickson-mumo.jpeg";
 import hemstonePhoto from "@/assets/hemstone-alumasa.jpg";
+import danielPhoto from "@/assets/daniel-nyambura.jpg";
 import "./About.css";
 
 const team = [
@@ -50,10 +51,21 @@ const team = [
   },
 ];
 
-const engineeringTeam = [
+const engineeringTeam: { name: string; position: string; image: string; linkedin?: string }[] = [
+  {
+    name: "Dickson Mumo",
+    position: "IoT & Hardware Engineer",
+    image: dicksonPhoto,
+    linkedin: "https://www.linkedin.com/in/dickson-mumo-4bba7697/",
+  },
+  {
+    name: "Daniel Nyambura",
+    position: "Assistant Lead Systems Engineer",
+    image: danielPhoto,
+  },
   {
     name: "Mititi Isaac",
-    position: "Lead Engineer",
+    position: "Assistant Lead Systems Engineer",
     image: mititiPhoto,
     linkedin: "https://www.linkedin.com/in/io-mititi/",
   },
@@ -62,12 +74,6 @@ const engineeringTeam = [
     position: "Backend Engineer",
     image: mumbuaPhoto,
     linkedin: "https://www.linkedin.com/in/mumbuamutuku",
-  },
-  {
-    name: "Dickson Mumo",
-    position: "IoT Engineer",
-    image: dicksonPhoto,
-    linkedin: "https://www.linkedin.com/in/dickson-mumo-4bba7697/",
   },
   {
     name: "Hemstone Alumasa",
@@ -146,18 +152,20 @@ const ProfileCard = ({ member }: { member: TeamMember }) => (
       </div>
     </div>
     {member.bio && <p className="about-profile__bio">{member.bio}</p>}
-    <Button variant="gold" asChild className="about-profile__link">
-      <a
-        href={member.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Connect with ${member.name} on LinkedIn (opens in a new tab)`}
-      >
-        <Linkedin size={16} aria-hidden="true" />
-        Connect on LinkedIn
-        <ArrowUpRight size={16} aria-hidden="true" />
-      </a>
-    </Button>
+    {member.linkedin && (
+      <Button variant="gold" asChild className="about-profile__link">
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Connect with ${member.name} on LinkedIn (opens in a new tab)`}
+        >
+          <Linkedin size={16} aria-hidden="true" />
+          Connect on LinkedIn
+          <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
+      </Button>
+    )}
   </article>
 );
 

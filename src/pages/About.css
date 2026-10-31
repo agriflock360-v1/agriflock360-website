@@ -348,8 +348,14 @@
 }
 
 .about-team__grid--engineering {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 20px;
+}
+
+@media (max-width: 1280px) {
+  .about-team__grid--engineering {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .about-profile {

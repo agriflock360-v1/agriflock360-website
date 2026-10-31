@@ -47,8 +47,8 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   },
   {
     id: "team", question: "Who is behind AgriFlock 360?", title: "Our people",
-    answer: ["Abisai Nandi is Founder & CIO, and Peter Davis Krahenbuhl is Co-founder & Chief Advisor. The leadership team also includes Jacqueline Maganga, Marketing Director, and James Obimbo, Partner & CFO.", "Our engineering team includes Mititi Isaac, Mumbua Mutuku, Dickson Mumo and Hemstone Alumasa. Board advisors are Andy Olek, Dr. Jon Moyle and Babu S. Rahman. Their roles, biographies and LinkedIn links are on the About page."],
-    keywords: ["team people founder founders cofounder leadership engineering engineers advisors board staff who behind abisai nandi peter davis krahenbuhl jacqueline maganga james obimbo mititi isaac mumbua mutuku dickson mumo hemstone alumasa andy olek jon moyle babu rahman"],
+    answer: ["Abisai Nandi is Founder & CIO, and Peter Davis Krahenbuhl is Co-founder & Chief Advisor. The leadership team also includes Jacqueline Maganga, Marketing Director, and James Obimbo, Partner & CFO.", "Our engineering team includes Dickson Mumo, Daniel Nyambura, Mititi Isaac, Mumbua Mutuku and Hemstone Alumasa. Board advisors are Andy Olek, Dr. Jon Moyle and Babu S. Rahman. Their roles, biographies and LinkedIn links are on the About page."],
+    keywords: ["team people founder founders cofounder leadership engineering engineers advisors board staff who behind abisai nandi peter davis krahenbuhl jacqueline maganga james obimbo daniel nyambura mititi isaac mumbua mutuku dickson mumo hemstone alumasa andy olek jon moyle babu rahman"],
     sources: [source("Meet our team", "/about#about-team")],
   },
   {
