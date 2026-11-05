@@ -17,7 +17,7 @@ const enquiryTopics = [
   { title: "General enquiry", icon: MessageSquare, hint: "Tell us a little about yourself and how we can help." },
 ];
 const helpfulLinks = [
-  { number: "01", title: "Get the app", description: "Download for Android or join the iOS beta, then choose your module.", label: "Download AgriFlock 360", to: "/download" },
+  { number: "01", title: "Get the app", description: "Download for Android or iOS, then choose your module.", label: "Download AgriFlock 360", to: "/download" },
   { number: "02", title: "Understand the pricing", description: "Compare farmer plans and see the rates for professional services.", label: "View plans & service rates", to: "/pricing" },
   { number: "03", title: "Explore what’s inside", description: "Discover the tools for feeding, vaccinations, farm records and more.", label: "Explore app features", to: "/features" },
 ];
