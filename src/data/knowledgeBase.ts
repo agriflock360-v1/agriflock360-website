@@ -107,7 +107,7 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   },
   {
     id: "download", question: "Where can I download the app?", title: "Get the mobile app",
-    answer: ["Android: use the Google Play button on our Download page.\niPhone and iPad: use Join on TestFlight. Install Apple's TestFlight app if prompted, accept the AgriFlock 360 invitation and install the beta.", "Both download buttons and scannable QR codes are on the Download page. The iOS version is a TestFlight beta."],
+    answer: ["Android: use the Google Play button on our Download page.\niPhone and iPad: use the App Store button on our Download page, or search for AgriFlock 360 in the App Store.", "Both download buttons and scannable QR codes are on the Download page."],
     keywords: ["download install installation android ios iphone ipad apple app store play store google testflight beta qr mobile phone smartphone"],
     sources: [download],
   },

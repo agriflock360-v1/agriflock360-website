@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button";
 import { pricingTerms } from "@/data/pricing";
 import googlePlayIcon from "@/assets/google-play.png";
 import appleIcon from "@/assets/apple-icon.svg";
-import qrAndroid from "@/assets/google-play-qr.svg";
-import qrIos from "@/assets/testflight-qr.svg";
+import qrAndroid from "@/assets/google-play-qr.webp";
+import qrIos from "@/assets/app-store-qr.webp";
 import chooseRole from "@/assets/app-features/choose-role.jpeg";
 import "./Download.css";
 
 const playStoreUrl = "https://play.google.com/store/apps/details?id=com.mglobal.agriflock";
-const testFlightUrl = "https://testflight.apple.com/join/QdMNfNtS";
+const appStoreUrl = "https://apps.apple.com/app/id6760583133";
 
 const farmerSteps = [
   ["Choose Farmer", "Select the Farmer module when you create your account."],
@@ -25,8 +25,8 @@ const officerSteps = [
 ];
 const downloadFaqs = [
   ["Do farmers and extension officers use the same app?", "Yes. Download AgriFlock 360, then choose Farmer or Veterinarian (Extension officer) during signup. Each role has its own module within the app."],
-  ["How do I install on an iPhone or iPad?", "Use the Join on TestFlight button above. Install Apple’s TestFlight app if prompted, open the AgriFlock 360 invitation on your device, then accept the invitation and install the beta app."],
-  ["How do I use a download QR code?", "Open your phone’s camera, point it at the code and tap the link that appears. The Android code opens Google Play; the iPhone and iPad code opens the TestFlight invitation. If you are already on your phone, use the download button instead."],
+  ["How do I install on an iPhone or iPad?", "Use the Download on the App Store button above, or search for AgriFlock 360 in the App Store, then tap Get to install the app."],
+  ["How do I use a download QR code?", "Open your phone’s camera, point it at the code and tap the link that appears. The Android code opens Google Play; the iPhone and iPad code opens the App Store. If you are already on your phone, use the download button instead."],
   ["Can I start providing services as soon as I sign up?", "Vets and extension officers must accept the terms, submit their details and qualification documents, and wait for approval before offering services."],
 ];
 
@@ -53,10 +53,10 @@ const Download = () => {
               <DownloadQR image={qrAndroid} platform="Google Play" />
             </section>
             <section className="download-store" aria-labelledby="ios-heading">
-              <div className="download-store__heading"><span className="download-store__icon"><img src={appleIcon} alt="" width={26} height={26} /></span><div><h2 id="ios-heading">iPhone & iPad</h2><p>TestFlight beta</p></div></div>
-              <p className="download-store__description">Install TestFlight, then join the AgriFlock 360 beta.</p>
-              <Button variant="gold" asChild><a href={testFlightUrl} target="_blank" rel="noopener noreferrer">Join on TestFlight<ExternalLink size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a></Button>
-              <DownloadQR image={qrIos} platform="TestFlight" />
+              <div className="download-store__heading"><span className="download-store__icon"><img src={appleIcon} alt="" width={26} height={26} /></span><div><h2 id="ios-heading">iPhone & iPad</h2><p>App Store</p></div></div>
+              <p className="download-store__description">Install the app directly from the App Store.</p>
+              <Button variant="gold" asChild><a href={appStoreUrl} target="_blank" rel="noopener noreferrer">Download on the App Store<ExternalLink size={16} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a></Button>
+              <DownloadQR image={qrIos} platform="the App Store" />
             </section>
           </div>
           <div className="download-trial"><Gift size={21} strokeWidth={1.5} aria-hidden="true" /><p>Farmer plans include a <strong>{pricingTerms.trialDays}-day free trial.</strong> <Link to="/pricing#farmer-plans">View plans<ArrowRight size={15} aria-hidden="true" /></Link></p></div>

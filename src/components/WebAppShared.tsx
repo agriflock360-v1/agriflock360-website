@@ -27,7 +27,7 @@ export function WebMobileCTA() {
   return (
     <section className="web-mobile-cta" aria-labelledby="web-mobile-heading">
       <div className="web-container">
-        <div><p className="web-eyebrow">Available on mobile today</p><h2 id="web-mobile-heading">You can start growing now.</h2><p>One app for farmers and vets or extension officers. Get it on Google Play, or join the iPhone and iPad beta through TestFlight.</p></div>
+        <div><p className="web-eyebrow">Available on mobile today</p><h2 id="web-mobile-heading">You can start growing now.</h2><p>One app for farmers and vets or extension officers. Get it on Google Play or the App Store.</p></div>
         <div className="web-mobile-cta__actions"><Button variant="gold" asChild><Link to="/download"><Smartphone size={20} aria-hidden="true" />Get the Mobile App<ArrowRight size={18} aria-hidden="true" /></Link></Button><Link className="web-text-link" to="/pricing">View plans & service rates<ArrowRight size={17} aria-hidden="true" /></Link></div>
       </div>
     </section>

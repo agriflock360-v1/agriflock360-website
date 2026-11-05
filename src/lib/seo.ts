@@ -19,7 +19,7 @@ export const seoPages: PageSeo[] = [
   { path: "/", title: "Poultry Farm Management App in Kenya | AgriFlock 360", description: "Manage your poultry farm with AgriFlock 360. Track feeding, vaccinations, flock records and costs, and connect with vets and extension officers in Kenya.", label: "Home" },
   { path: "/features", title: "Poultry Management App Features | AgriFlock 360", description: "Explore AgriFlock 360 tools for flock records, feeding schedules, vaccination tracking, farm reports, quotations, marketplace access and veterinary support.", label: "App features" },
   { path: "/pricing", title: "Poultry App Pricing & Vet Service Rates | AgriFlock 360", description: `Compare poultry farmer plans from KES ${farmerPlans[0].price} per month after a ${pricingTerms.trialDays}-day free trial. View separate vet and extension officer service rates in Kenya.`, label: "Pricing" },
-  { path: "/download", title: "Download the Poultry Farming App | AgriFlock 360", description: "Get AgriFlock 360 on Google Play or join the iPhone and iPad TestFlight beta. Sign up as a poultry farmer, veterinarian or extension officer.", label: "Download the app" },
+  { path: "/download", title: "Download the Poultry Farming App | AgriFlock 360", description: "Get AgriFlock 360 on Google Play or the App Store for iPhone and iPad. Sign up as a poultry farmer, veterinarian or extension officer.", label: "Download the app" },
   { path: "/vaccination", title: "Poultry Vaccination Tracking & Reminders | AgriFlock 360", description: "Keep poultry vaccination records organised with AgriFlock 360. Follow vaccination schedules, receive reminders and monitor flock health from your phone.", label: "Vaccination & health" },
   { path: "/feeding", title: "Poultry Feeding Schedules & Tracking | AgriFlock 360", description: "Plan poultry feeding schedules, track feed consumption and review growth with AgriFlock 360. Keep feeding records together as your flock develops.", label: "Precision feeding" },
   { path: "/analytics", title: "Poultry Farm Analytics & Reports | AgriFlock 360", description: "Explore AgriFlock 360 poultry farm analytics, performance reports and data insights to understand your flock and support farm management decisions.", label: "Farm analytics" },
@@ -71,7 +71,7 @@ export function getStructuredData(page: PageSeo) {
   // Do not advertise a free subscription, a released web app or invented ratings.
   if (["/", "/features", "/pricing", "/download"].includes(page.path)) {
     graph.push({ "@type": "SoftwareApplication", "@id": `${SITE_URL}/#app`, name: SITE_NAME,
-      url: `${SITE_URL}/download`, applicationCategory: "BusinessApplication", operatingSystem: "Android, iOS (TestFlight beta)",
+      url: `${SITE_URL}/download`, applicationCategory: "BusinessApplication", operatingSystem: "Android, iOS",
       publisher: { "@id": organizationId }, description: "Poultry farm management with flock records, feeding guidance, vaccination tracking and access to professional support.",
       ...(page.path === "/pricing" ? { offers: farmerPlans.map(plan => ({
         "@type": "Offer", name: `${plan.name} farmer plan`, price: plan.price, priceCurrency: "KES", url: `${SITE_URL}/pricing#farmer-plans`,

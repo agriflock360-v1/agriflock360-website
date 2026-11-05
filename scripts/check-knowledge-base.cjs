@@ -111,7 +111,8 @@ try {
   assert.match(content("transport"), /KES 15.*per kilometre/);
   assert.match(content("transport"), /Remote advisory calls do not/);
   assert.match(content("web"), /still in development/);
-  assert.match(content("download"), /TestFlight beta/);
+  assert.match(content("download"), /App Store/);
+  assert.doesNotMatch(content("download"), /TestFlight/);
   assert.match(content("vet-signup"), /qualification documents/);
   assert.match(content("vet-signup"), /Wait for review and approval/);
   assert.match(content("earnings"), /80%/);

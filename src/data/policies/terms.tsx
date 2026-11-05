@@ -13,7 +13,7 @@ export const termsSections: LegalSection[] = [
       <p>
         By accessing or using our website, mobile app, dashboard, and IoT devices, you agree to be bound by these Terms & Conditions ("Terms"). If you do not agree, you may not use the platform or any associated services.
       </p>
-      <div className="legal-note"><p><strong>Current access:</strong> the mobile app has Farmer and Veterinarian (Extension officer) modules. The web app is still in development. The iPhone and iPad app is available through TestFlight beta; Android access is through Google Play. See <Link to="/download">app download options</Link>.</p></div>
+      <div className="legal-note"><p><strong>Current access:</strong> the mobile app has Farmer and Veterinarian (Extension officer) modules. The web app is still in development. The app is available on the App Store for iPhone and iPad and on Google Play for Android. See <Link to="/download">app download options</Link>.</p></div>
     </>),
   },
   {
