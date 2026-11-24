@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone, Facebook, Instagram, Twitter, ShieldCheck } from "lucide-react";
+import { kenyaOffice } from "@/data/company";
 import agriflockLogo from "@/assets/agriflock-logo-new.png";
 import "./Footer.css";
 
@@ -35,6 +36,10 @@ export const Footer = () => (
             <span>AgriFlock 360</span>
           </Link>
           <p className="site-footer__description">Digitizing smallholder poultry farming through AI-powered IoT solutions.</p>
+          <p className="patent-badge site-footer__patent">
+            <ShieldCheck size={14} strokeWidth={1.8} aria-hidden="true" />
+            Patent pending
+          </p>
           <div className="site-footer__socials">
             <a href="https://www.linkedin.com/company/agriflock-360" target="_blank" rel="noopener noreferrer" className="button-gold site-footer__social-link" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5" aria-hidden="true" />
@@ -84,6 +89,10 @@ export const Footer = () => (
             <div className="site-footer__contact-item">
               <Phone size={18} strokeWidth={1.5} aria-hidden="true" />
               <div><span>United States</span><a href="tel:+16674469432">+1 667 446 9432</a></div>
+            </div>
+            <div className="site-footer__contact-item">
+              <MapPin size={18} strokeWidth={1.5} aria-hidden="true" />
+              <div><span>Kenya office</span><a href={kenyaOffice.mapUrl} target="_blank" rel="noopener noreferrer">{kenyaOffice.lines.join(", ")}</a></div>
             </div>
           </address>
         </div>

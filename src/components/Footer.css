@@ -51,6 +51,10 @@
   line-height: 1.9;
 }
 
+.site-footer__patent {
+  margin-top: 18px;
+}
+
 .site-footer__socials {
   display: flex;
   flex-wrap: wrap;

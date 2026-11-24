@@ -1,3 +1,4 @@
+import { kenyaOffice } from "../data/company.ts";
 import { farmerPlans, pricingTerms } from "../data/pricing.ts";
 
 export const SITE_URL = "https://www.agriflock360.com";
@@ -51,6 +52,7 @@ export function getStructuredData(page: PageSeo) {
       alternateName: "AgriFlock360", url: `${SITE_URL}/`,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/agriflock360-logo.png`, width: 512, height: 512 },
       email: "support@agriflock360.com",
+      address: { "@type": "PostalAddress", streetAddress: `${kenyaOffice.suite}, ${kenyaOffice.building}, ${kenyaOffice.street}`, addressLocality: kenyaOffice.city, addressCountry: "KE" },
       sameAs: ["https://www.linkedin.com/company/agriflock-360", "https://web.facebook.com/profile.php?id=61584028213600", "https://www.instagram.com/agriflock_360", "https://x.com/agriflock360", "https://www.tiktok.com/@agriflock_360"],
       contactPoint: [
         { "@type": "ContactPoint", telephone: "+254729554434", contactType: "customer service", areaServed: "KE", availableLanguage: "English" },

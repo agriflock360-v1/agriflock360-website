@@ -1,12 +1,13 @@
 import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Copy, Handshake, LoaderCircle, Mail, MessageSquare, Phone, Send, Smartphone, Stethoscope, Tractor } from "lucide-react";
+import { ArrowRight, Copy, Handshake, LoaderCircle, Mail, MapPin, MessageSquare, Phone, Send, Smartphone, Stethoscope, Tractor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { contactApi } from "@/services/api";
 import { SpamProtection } from "@/components/SpamProtection";
+import { kenyaOffice } from "@/data/company";
 import "./Contact.css";
 
 const supportEmail = "support@agriflock360.com";
@@ -125,11 +126,12 @@ const Contact = () => {
             <div className="contact-direct__card">
               <p className="contact-eyebrow">A direct connection</p>
               <h2 id="contact-direct-heading">Reach our team.</h2>
-              <p>Choose email or give us a call. We can help you find your next step with AgriFlock 360.</p>
+              <p>Email us, give us a call or visit our Nairobi office. We can help you find your next step with AgriFlock 360.</p>
               <address className="contact-channels">
                 <a href={`mailto:${supportEmail}`}><Mail size={21} strokeWidth={1.5} aria-hidden="true" /><span><span className="contact-channels__label">Email us</span><span className="contact-channels__value">{supportEmail}</span></span><ArrowRight size={17} aria-hidden="true" /></a>
                 <a href="tel:+254729554434"><Phone size={21} strokeWidth={1.5} aria-hidden="true" /><span><span className="contact-channels__label">Call · Kenya</span><span className="contact-channels__value">+254 729 554 434</span></span><ArrowRight size={17} aria-hidden="true" /></a>
                 <a href="tel:+16674469432"><Phone size={21} strokeWidth={1.5} aria-hidden="true" /><span><span className="contact-channels__label">Call · United States</span><span className="contact-channels__value">+1 667 446 9432</span></span><ArrowRight size={17} aria-hidden="true" /></a>
+                <a href={kenyaOffice.mapUrl} target="_blank" rel="noopener noreferrer"><MapPin size={21} strokeWidth={1.5} aria-hidden="true" /><span><span className="contact-channels__label">Visit · Kenya office</span><span className="contact-channels__value">{kenyaOffice.lines.join(", ")}</span></span><ArrowRight size={17} aria-hidden="true" /></a>
               </address>
               <div className="contact-direct__note"><MessageSquare size={19} aria-hidden="true" /><p>For app support, include your device type and a short description of the issue so we can understand what’s happening.</p></div>
             </div>

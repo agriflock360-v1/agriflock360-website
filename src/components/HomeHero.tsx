@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, Leaf, Radio, Smartphone, Sun, Bird } from "lucide-react";
+import { ArrowDown, ArrowRight, Leaf, Radio, ShieldCheck, Smartphone, Sun, Bird } from "lucide-react";
 import { Link } from "react-router-dom";
 import { HeroVideo } from "./HeroVideo";
 import heroVideo from "@/assets/chicks-hero-continuous.mp4";
@@ -18,10 +18,16 @@ export const HomeHero = () => (
       <HeroVideo videoSrc={heroVideo} posterSrc={heroPoster} posterSmallSrc={heroPosterSmall} />
 
       <div className="home-hero__content">
-        <p className="home-hero__eyebrow">
-          <Leaf size={17} strokeWidth={1.6} aria-hidden="true" />
-          AI-Powered Poultry Management
-        </p>
+        <div className="home-hero__eyebrow-row">
+          <p className="home-hero__eyebrow">
+            <Leaf size={17} strokeWidth={1.6} aria-hidden="true" />
+            AI-Powered Poultry Management
+          </p>
+          <p className="patent-badge">
+            <ShieldCheck size={14} strokeWidth={1.8} aria-hidden="true" />
+            Patent pending
+          </p>
+        </div>
 
         <h1 id="home-hero-heading" className="home-hero__heading">
           Regenerative<br />

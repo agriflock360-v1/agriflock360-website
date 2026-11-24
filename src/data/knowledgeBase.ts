@@ -167,8 +167,8 @@ export const knowledgeArticles: KnowledgeArticle[] = [
   },
   {
     id: "support", question: "How can I contact the team?", title: "Talk to AgriFlock 360",
-    answer: ["Email: support@agriflock360.com\nKenya: +254 729 554 434\nUnited States: +1 667 446 9432", "The Contact page accepts enquiries about farmer and app support, vets and extension officers, partnerships and general questions. For app issues, include your device type and a short description of the problem."],
-    keywords: ["contact contacts support help human person agent team email phone telephone call kenya usa us united states reach address location office password login account issue problem bug feedback"],
+    answer: ["Email: support@agriflock360.com\nKenya: +254 729 554 434\nUnited States: +1 667 446 9432\nKenya office: Office Suite 615, Suraj Plaza, Limuru Road, Nairobi", "The Contact page accepts enquiries about farmer and app support, vets and extension officers, partnerships and general questions. For app issues, include your device type and a short description of the problem."],
+    keywords: ["contact contacts support help human person agent team email phone telephone call kenya usa us united states reach address location office suite suraj plaza limuru road nairobi visit password login account issue problem bug feedback"],
     sources: [contact],
   },
   {
