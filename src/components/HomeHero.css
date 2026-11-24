@@ -88,6 +88,18 @@
   text-transform: uppercase;
 }
 
+.home-hero__eyebrow-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin-bottom: 30px;
+}
+
+.home-hero__eyebrow-row .home-hero__eyebrow {
+  margin-bottom: 0;
+}
+
 .home-hero__heading {
   margin: 0;
   font-size: clamp(44px, 4.65vw, 72px);
@@ -279,7 +291,7 @@
     font-size: clamp(42px, 7.5vw, 64px);
   }
 
-  .home-hero__eyebrow {
+  .home-hero__eyebrow-row {
     margin-bottom: 24px;
   }
 
