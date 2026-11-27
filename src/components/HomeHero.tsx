@@ -4,10 +4,11 @@ import { HeroVideo } from "./HeroVideo";
 import heroVideo from "@/assets/chicks-hero-continuous.mp4";
 import heroPoster from "@/assets/chicks-continuous-poster.webp";
 import heroPosterSmall from "@/assets/chicks-continuous-poster-small.webp";
+import { patentStatus } from "@/data/company";
 import "./HomeHero.css";
 
 const highlights = [
-  { value: "100+", label: "Bird brooder capacity", icon: Bird },
+  { value: "150", label: "Chicks per brooder", icon: Bird },
   { value: "100%", label: "Solar powered", icon: Sun },
   { value: "24/7", label: "Farm monitoring", icon: Radio },
 ];
@@ -25,7 +26,7 @@ export const HomeHero = () => (
           </p>
           <p className="patent-badge">
             <ShieldCheck size={14} strokeWidth={1.8} aria-hidden="true" />
-            Patent pending
+            {patentStatus}
           </p>
         </div>
 

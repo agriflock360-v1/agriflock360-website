@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, MapPin, Phone, Facebook, Instagram, Twitter, ShieldCheck } from "lucide-react";
-import { kenyaOffice } from "@/data/company";
+import { kenyaOffice, patentStatus } from "@/data/company";
 import agriflockLogo from "@/assets/agriflock-logo-new.png";
 import "./Footer.css";
 
@@ -38,7 +38,7 @@ export const Footer = () => (
           <p className="site-footer__description">Digitizing smallholder poultry farming through AI-powered IoT solutions.</p>
           <p className="patent-badge site-footer__patent">
             <ShieldCheck size={14} strokeWidth={1.8} aria-hidden="true" />
-            Patent pending
+            {patentStatus}
           </p>
           <div className="site-footer__socials">
             <a href="https://www.linkedin.com/company/agriflock-360" target="_blank" rel="noopener noreferrer" className="button-gold site-footer__social-link" aria-label="LinkedIn">

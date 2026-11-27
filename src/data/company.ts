@@ -3,6 +3,8 @@ const building = "Suraj Plaza";
 const street = "Limuru Road";
 const city = "Nairobi";
 
+export const patentStatus = "Patent filed in USA, Kenya and PCT in progress.";
+
 export const kenyaOffice = {
   suite,
   building,
